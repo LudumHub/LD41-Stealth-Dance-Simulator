@@ -24,8 +24,6 @@ public class WorldSnap : MonoBehaviour {
 
     IEnumerator Start()
     {
-        //StartCoroutine(Disco());
-
         yield return new WaitForSeconds(Mathf.Abs(x + y) * 0.1f);
         while (transform.position != awakeCoords)
         {
@@ -33,28 +31,16 @@ public class WorldSnap : MonoBehaviour {
             yield return new WaitForEndOfFrame();
         }
 
-        var renderer = GetComponent<SpriteRenderer>();
-        while (true)
-        {
-            renderer.color = Color.gray;
-            yield return new WaitForSeconds(0.5f);
-            renderer.color = Color.white;
-            yield return new WaitForSeconds(0.5f);
-        }
-    }
-
-    IEnumerator Disco()
-    {
-        var renderer = GetComponent<SpriteRenderer>();
         if (x % 2 == 0)
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
 
+        var renderer = GetComponent<SpriteRenderer>();
         while (true)
         {
             renderer.color = Color.gray;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1f);
             renderer.color = Color.white;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1f);
         }
     }
 
