@@ -9,10 +9,12 @@ public class PlayerMovement : MonoBehaviour
     private Movement movement;
     public SpriteRenderer spriteRenderer;
     public Animator animator;
+    private Player player;
 
     private void Awake()
     {
         movement = GetComponent<Movement>();
+        player = GetComponent<Player>();
     }
 
     private void Update ()
@@ -22,21 +24,20 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
     }
 
-    private DanceStyle currentStyle;
-
     private void Dance()
     {
-        var newDance = DanceStyle.AllStyles
+        var newStyle = DanceStyle.AllStyles
             .Last(s => speedCounter.ClicksPerSecond >= s.MinClicksPerSecond);
-        if (currentStyle != null && currentStyle.Name == newDance.Name)
+        var currentStyle = player.DanceStyle;
+        if (currentStyle != null && currentStyle.Name == newStyle.Name)
             return;
-        spriteRenderer.color = newDance.PlayerColor;
+        spriteRenderer.color = newStyle.PlayerColor;
         // Hack?
-        movement.MaxSpeed = newDance.MinClicksPerSecond;
+        movement.MaxSpeed = newStyle.MinClicksPerSecond;
         if (currentStyle != null)
             animator.ResetTrigger(currentStyle.PlayerAnimation);
-        animator.SetTrigger(newDance.PlayerAnimation);
-        currentStyle = newDance;
+        animator.SetTrigger(newStyle.PlayerAnimation);
+        player.DanceStyle = newStyle;
     }
 
     private void MovePlayer()

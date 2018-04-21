@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float suspiciousness;
     [SerializeField] private float suspiciousnessDropCooldown = 1f;
     private float timeSinceLastSuspiciousnessUpdate;
+    public DanceStyle DanceStyle;
 
     public float Suspiciousness
     {

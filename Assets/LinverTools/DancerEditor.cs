@@ -11,7 +11,7 @@ public class DancerEditor : Editor
         var styles = DanceStyle.AllStyles.ToList();
         var currentStyle = styles
             .Select(s => new { s.Name, Index = styles.IndexOf(s) })
-            .FirstOrDefault(s => dancer.DanceStyle.Name.Equals(s.Name));
+            .FirstOrDefault(s => dancer.DanceStyle != null && dancer.DanceStyle.Name.Equals(s.Name));
         styles.Add(new DanceStyle { Name = "Custom" });
         var currentStyleIndex = currentStyle == null ? styles.Count - 1 : currentStyle.Index;
         var names = styles.Select(s => s.Name).ToArray();
