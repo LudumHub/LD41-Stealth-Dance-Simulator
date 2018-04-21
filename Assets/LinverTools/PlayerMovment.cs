@@ -48,7 +48,7 @@ public class PlayerMovment : MonoBehaviour {
 
     private void Awake()
     {
-        dance = dances[0];
+        dance = 0;
     }
 
     void Update ()
@@ -58,31 +58,32 @@ public class PlayerMovment : MonoBehaviour {
     }
 
     float timer = 0f;
-    DanceMode dance;
+    int dance;
     private void Dance()
     {
         timer += Time.deltaTime;
 
         if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Jump"))
         {
-            for (var i = 0; i < dances.Length; i++)
+            for (var i = 1; i < dances.Length; i++)
                 if (timer > dances[i].timeFromPrevTap)
                 {
-                    ApplayDance(dances[i]);
+                    ApplayDance(i);
                     break;
                 }
 
-            animator.SetTrigger(dance.name);
+            animator.SetTrigger(dances[dance].name);
             timer = 0;
         }
 
-        if (timer > dances[0].timeFromPrevTap)
-            ApplayDance(dances[0]);
+        if (timer > dances[dance].timeFromPrevTap && dance > 0)
+            ApplayDance(dance-1);
     }
 
-    private void ApplayDance(DanceMode danceMode)
+    private void ApplayDance(int danceId)
     {
-        dance = danceMode;
+        var danceMode = dances[danceId];
+        dance = danceId;
         spriteRenderer.color = danceMode.color;
         maxSpeed = danceMode.speed;
     }

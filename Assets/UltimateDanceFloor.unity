@@ -209,6 +209,10 @@ MonoBehaviour:
   target: {fileID: 1674597806}
   smoothDampTime: 1
   maxDistance: 1
+  minSize: 2
+  maxSize: 4
+  maxWaitingSecForTap: 1
+  secWaited: 6
 --- !u!1001 &589996032
 Prefab:
   m_ObjectHideFlags: 0

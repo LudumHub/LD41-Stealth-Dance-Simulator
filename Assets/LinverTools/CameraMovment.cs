@@ -6,7 +6,10 @@ public class CameraMovment : MonoBehaviour {
     public Transform target;
     public float smoothDampTime = 0.2f;
     public float maxDistance = 4;
+    public float minSize = 3;
+    public float maxSize = 6;
 
+    float sizeDampVelocity;
     Vector3 smoothDampVelocity;
     float sizeVelocity;
     Vector3 destination;
@@ -23,6 +26,24 @@ public class CameraMovment : MonoBehaviour {
         Gizmos.DrawSphere(destination, 0.1f);
     }
 
+    float timer = 0;
+    public float maxWaitingSecForTap = 3;
+    float secWaited = 3f;
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Jump"))
+        {
+            secWaited = timer;
+            timer = 0;
+
+            Debug.Log(secWaited / maxWaitingSecForTap);
+        }
+
+        if (timer > maxWaitingSecForTap)
+            secWaited = maxWaitingSecForTap;
+    }
+
     void LateUpdate()
     {
         if (target == null)
@@ -33,12 +54,16 @@ public class CameraMovment : MonoBehaviour {
 
         destination = Vector3.Lerp(pointer, target.position, 0.3f);
         var distanceVector = destination - target.position;
-        if (distanceVector.magnitude > maxDistance)
+        var distance = distanceVector.magnitude;
+        if (distance > maxDistance)
             destination = target.position + 
                 distanceVector.normalized * maxDistance;
 
         destination.z = transform.position.z;
         transform.position = Vector3.SmoothDamp(transform.position, destination, ref smoothDampVelocity, smoothDampTime);
+
+        var zoom = Mathf.Lerp(minSize, maxSize, secWaited / maxWaitingSecForTap);
+        Camera.main.orthographicSize = Mathf.SmoothDamp(Camera.main.orthographicSize, zoom, ref sizeVelocity, 0.5f);
     }
 
 }
