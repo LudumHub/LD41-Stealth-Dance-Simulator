@@ -77,7 +77,8 @@ public class PlayerMovment : MonoBehaviour
             timer = 0;
         }
 
-        if (timer > dances[dance].timeFromPrevTap && dance > 0)
+        if (timer > Mathf.Max(dances[dance].timeFromPrevTap * 2, 0.5f)
+            && dance > 0)
             ApplayDance(dance-1);
     }
 

@@ -28,16 +28,15 @@ public class CameraMovment : MonoBehaviour {
 
     float timer = 0;
     public float maxWaitingSecForTap = 3;
+    public float minWaitingSecForTap = 0.3f;
     float secWaited = 3f;
     private void Update()
     {
         timer += Time.deltaTime;
         if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Jump"))
         {
-            secWaited = timer;
+            secWaited = Mathf.Max(timer, minWaitingSecForTap);
             timer = 0;
-
-            Debug.Log(secWaited / maxWaitingSecForTap);
         }
 
         if (timer > maxWaitingSecForTap)
@@ -62,7 +61,7 @@ public class CameraMovment : MonoBehaviour {
         destination.z = transform.position.z;
         transform.position = Vector3.SmoothDamp(transform.position, destination, ref smoothDampVelocity, smoothDampTime);
 
-        var zoom = Mathf.Lerp(minSize, maxSize, secWaited / maxWaitingSecForTap);
+        var zoom = Mathf.Lerp(minSize, maxSize, secWaited / (maxWaitingSecForTap - minWaitingSecForTap));
         Camera.main.orthographicSize = Mathf.SmoothDamp(Camera.main.orthographicSize, zoom, ref sizeVelocity, 0.5f);
     }
 
