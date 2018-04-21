@@ -22,4 +22,12 @@ public class Movement: MonoBehaviour
         else
             transform.position = targetPosition;
     }
+
+    public void Stop()
+    {
+        var isCloseToDestination = Vector3.Distance(transform.position, Destination) < 1f;
+        if (isCloseToDestination)
+            return;
+        Destination = transform.position + Vector3.Normalize(Destination);
+    }
 }

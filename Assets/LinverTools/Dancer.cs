@@ -10,7 +10,7 @@ public class Dancer : MonoBehaviour
     {
         var player = other.gameObject.GetComponent<Player>();
         if (player == null) return;
-        if (other.collider == BodyCollider)
+        if (other.otherCollider == BodyCollider)
         {
             player.RaiseSuspiciousness();
             player.RaiseSuspiciousness();
