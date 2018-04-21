@@ -10,7 +10,7 @@ public class WorldSnap : MonoBehaviour {
         if (!Application.isPlaying &&
             prevPosition != transform.position)
             Snap();
-	}
+    }
 
     Vector3 awakeCoords;
     void Awake()
