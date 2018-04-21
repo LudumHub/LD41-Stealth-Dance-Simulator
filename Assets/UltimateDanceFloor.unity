@@ -207,8 +207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1674597806}
-  smoothDampTime: 0.5
-  maxDistance: 2.5
+  smoothDampTime: 1
+  maxDistance: 1
 --- !u!1001 &589996032
 Prefab:
   m_ObjectHideFlags: 0

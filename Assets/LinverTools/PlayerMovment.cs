@@ -75,6 +75,9 @@ public class PlayerMovment : MonoBehaviour {
             animator.SetTrigger(dance.name);
             timer = 0;
         }
+
+        if (timer > dances[0].timeFromPrevTap)
+            ApplayDance(dances[0]);
     }
 
     private void ApplayDance(DanceMode danceMode)
