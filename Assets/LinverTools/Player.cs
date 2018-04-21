@@ -13,6 +13,11 @@ public class Player : MonoBehaviour
         private set { suspiciousness = Mathf.Clamp(value, 0, 1f); }
     }
 
+    public bool IsSuspicious
+    {
+        get { return Suspiciousness > 0f; }
+    }
+
     public void RaiseSuspiciousness()
     {
         Suspiciousness += 0.1f;
