@@ -37,9 +37,9 @@ public class WorldSnap : MonoBehaviour {
         var renderer = GetComponent<SpriteRenderer>();
         while (true)
         {
-            renderer.color = Color.gray;
+            renderer.color = Color.gray * multColor;
             yield return new WaitForSeconds(1f);
-            renderer.color = Color.white;
+            renderer.color = Color.white * multColor;
             yield return new WaitForSeconds(1f);
         }
     }
@@ -69,6 +69,20 @@ public class WorldSnap : MonoBehaviour {
     private float GetSnapValue(float value, float cellsize)
     {
         return Mathf.FloorToInt(value / cellsize);
+    }
+
+    private Color multColor = Color.white;
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        var dancer = other.GetComponent<Dancer>();
+        if (dancer == null) return;
+        multColor = dancer.DanceStyle.PlayerColor;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        multColor = Color.white;
     }
 }
 
