@@ -11,12 +11,12 @@ public class DanceMode
     public Color color;
 }
 
-public class PlayerMovment : MonoBehaviour {
-    Vector3 _smoothDampVelocity;
-    public float smoothDampTime = 2f;
+[RequireComponent(typeof(Movement))]
+public class PlayerMovment : MonoBehaviour
+{
+    private Movement movement;
     public SpriteRenderer spriteRenderer;
     public Animator animator;
-    float maxSpeed = 1f;
 
     public DanceMode[] dances = new DanceMode[4]
     {
@@ -40,7 +40,7 @@ public class PlayerMovment : MonoBehaviour {
         },
         new DanceMode() {
             name = "fast",
-            timeFromPrevTap =  0, 
+            timeFromPrevTap =  0,
             speed = 2f,
             color = Color.red
         },
@@ -49,6 +49,7 @@ public class PlayerMovment : MonoBehaviour {
     private void Awake()
     {
         dance = 0;
+        movement = GetComponent<Movement>();
     }
 
     void Update ()
@@ -85,15 +86,13 @@ public class PlayerMovment : MonoBehaviour {
         var danceMode = dances[danceId];
         dance = danceId;
         spriteRenderer.color = danceMode.color;
-        maxSpeed = danceMode.speed;
+        movement.MaxSpeed = danceMode.speed;
     }
 
     private void MovePlayer()
     {
         var destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         destination.z = transform.position.z;
-
-        transform.position = Vector3.SmoothDamp(transform.position, destination,
-            ref _smoothDampVelocity, smoothDampTime, maxSpeed);
+        movement.Destination = destination;
     }
 }
