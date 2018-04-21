@@ -36,6 +36,7 @@ public class Dancer : MonoBehaviour
         var player = other.gameObject.GetComponent<Player>();
         if (player == null) return;
         AlertMark.Disappear();
+        player.StillBaka = false;
         if (player.DanceStyle.Name != DanceStyle.Name)
         {
             AlertMark.SetYellow();

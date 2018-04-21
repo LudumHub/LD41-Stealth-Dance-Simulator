@@ -49,7 +49,7 @@ public class DancePolice: MonoBehaviour
         if (distance < 1.5f)
         {
             bakaAwaitRemaining -= Time.deltaTime;
-            if (bakaAwaitRemaining < 0)
+            if (bakaAwaitRemaining < 0 && player.StillBaka)
             {
                 StartCoroutine(NaniCoroutine());
                 isNaniActive = true;
