@@ -207,8 +207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1674597806}
-  smoothDampTime: 1
-  predictDistance: 0.3
+  smoothDampTime: 0.5
+  maxDistance: 2.5
 --- !u!1001 &589996032
 Prefab:
   m_ObjectHideFlags: 0
@@ -249,8 +249,12 @@ Prefab:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4830014134330794, guid: ff053b431f0173a4599cb78885fe67ac, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830014134330794, guid: ff053b431f0173a4599cb78885fe67ac, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff053b431f0173a4599cb78885fe67ac, type: 2}
