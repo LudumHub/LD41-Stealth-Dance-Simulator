@@ -73,7 +73,7 @@ public class WorldSnap : MonoBehaviour {
 
     private Color multColor = Color.white;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         var dancer = other.GetComponent<Dancer>();
         if (dancer == null) return;
