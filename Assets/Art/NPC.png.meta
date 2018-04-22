@@ -6,6 +6,20 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: Police_0
     21300002: Police_1
+    21300004: Boss_0
+    21300006: Boss_1
+    21300008: Slow_M_0
+    21300010: Slow_M_1
+    21300012: Slow_F_0
+    21300014: Slow_F_1
+    21300016: Average_F_0
+    21300018: Average_F_1
+    21300020: Average_M_0
+    21300022: Average_M_1
+    21300024: Fast_M_0
+    21300026: Fast_M_1
+    21300028: Fast_F_0
+    21300030: Fast_F_1
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -116,10 +130,10 @@ TextureImporter:
       name: Police_0
       rect:
         serializedVersion: 2
-        x: 12
+        x: 15
         y: 342
-        width: 185
-        height: 295
+        width: 179
+        height: 294
       alignment: 9
       pivot: {x: 0.9741653, y: 0.02008698}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,11 +145,207 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 185
-        height: 295
+        y: 17
+        width: 187
+        height: 284
       alignment: 9
       pivot: {x: 0.80310553, y: 0.023850936}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boss_0
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 322
+        width: 159
+        height: 305
+      alignment: 9
+      pivot: {x: 0.4888134, y: 0.030534487}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Boss_1
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 0
+        width: 161
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.021731995}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Slow_M_0
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 335
+        width: 140
+        height: 205
+      alignment: 9
+      pivot: {x: 0.48486394, y: 0.06585932}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Slow_M_1
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 11
+        width: 143
+        height: 205
+      alignment: 9
+      pivot: {x: 0.4924321, y: 0.05035421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Slow_F_0
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 330
+        width: 180
+        height: 200
+      alignment: 9
+      pivot: {x: 0.46694776, y: 0.018475037}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Slow_F_1
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 7
+        width: 157
+        height: 199
+      alignment: 9
+      pivot: {x: 0.38191137, y: 0.009656058}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Average_F_0
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 343
+        width: 167
+        height: 239
+      alignment: 9
+      pivot: {x: 0.5518543, y: 0.031556964}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Average_F_1
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 21
+        width: 170
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5473008, y: 0.024771195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Average_M_0
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 331
+        width: 224
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 0.033696964}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Average_M_1
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 5
+        width: 163
+        height: 253
+      alignment: 9
+      pivot: {x: 0.39512774, y: 0.032043073}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Fast_M_0
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 366
+        width: 146
+        height: 238
+      alignment: 9
+      pivot: {x: 0.37620482, y: 0.095881745}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Fast_M_1
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 6
+        width: 131
+        height: 343
+      alignment: 9
+      pivot: {x: 0.4162318, y: 0.06527256}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Fast_F_0
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 362
+        width: 120
+        height: 196
+      alignment: 9
+      pivot: {x: 0.6910319, y: 0.0713705}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Fast_F_1
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 22
+        width: 132
+        height: 176
+      alignment: 9
+      pivot: {x: 0.8791393, y: 0.05593939}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
