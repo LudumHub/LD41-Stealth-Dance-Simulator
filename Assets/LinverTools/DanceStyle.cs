@@ -63,7 +63,7 @@ public class DanceStyle
             return new DanceStyle
             {
                 Name = "Idle",
-                PlayerAnimation = "idle",
+                PlayerAnimation = "slow",
                 PlayerColor = Color.blue
             };
         }
