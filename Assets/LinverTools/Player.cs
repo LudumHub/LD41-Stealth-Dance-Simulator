@@ -18,6 +18,9 @@ public class Player : MonoBehaviour
         movement = GetComponent<Movement>();
     }
 
+    public RectTransform SuspIndicator;
+    private float maxSuspIndicatorSize = 100;
+
     public float Suspiciousness
     {
         get { return suspiciousness; }
@@ -34,7 +37,7 @@ public class Player : MonoBehaviour
     public void RaiseSuspiciousness()
     {
         StillBaka = true;
-        Suspiciousness += 0.1f;
+        Suspiciousness += 0.1f * Time.deltaTime;
         timeSinceLastSuspiciousnessUpdate = 0f;
     }
 
@@ -43,8 +46,13 @@ public class Player : MonoBehaviour
         timeSinceLastSuspiciousnessUpdate += Time.deltaTime;
         if (timeSinceLastSuspiciousnessUpdate > suspiciousnessDropCooldown)
         {
-            Suspiciousness -= 0.1f;
+            Suspiciousness -= 0.1f * Time.deltaTime * 2;
         }
+
+        var size = 0f;
+        if (suspiciousness > 0)
+            size = maxSuspIndicatorSize * suspiciousness;
+        SuspIndicator.transform.localScale = new Vector3(size, 1, 1);
     }
 
     public void SlowDown()
@@ -88,11 +96,15 @@ public class Player : MonoBehaviour
             CorrectColor = cell.multColor;
             if (CorrectColor != DanceStyle.PlayerColor)
             {
+                RaiseSuspiciousness();
                 alertMark.SetYellow();
                 alertMark.Appear();
             }
             else
                 alertMark.Disappear();
         }
+
+        if (CorrectColor != DanceStyle.PlayerColor)
+            RaiseSuspiciousness();
     }
 }

@@ -17,6 +17,7 @@ public class Dancer : FloorPainter
         }
     }
 
+    /*
     private void OnCollisionStay2D(Collision2D other)
     {
         var player = other.gameObject.GetComponent<Player>();
@@ -26,9 +27,9 @@ public class Dancer : FloorPainter
             AlertMark.SetRed();
             AlertMark.Appear();
             player.RaiseSuspiciousness();
-            player.RaiseSuspiciousness();
+            //player.RaiseSuspiciousness();
         }
-    }
+    }*/
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -40,7 +41,7 @@ public class Dancer : FloorPainter
         {
             AlertMark.SetYellow();
             AlertMark.Appear();
-            player.RaiseSuspiciousness();
+            //player.RaiseSuspiciousness();
         }
     }
 

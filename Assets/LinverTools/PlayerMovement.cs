@@ -26,20 +26,37 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
     }
 
+    float timer = 0f;
     private void Dance()
     {
-        DanceStyle newStyle;
+        timer += Time.deltaTime;
+        if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Jump"))
+        {
+            DanceStyle newStyle;
+            if (timer <= DanceStyle.Fast.SecFromLastTap)
+                newStyle = DanceStyle.Fast;
+            else 
+                newStyle = DanceStyle.Average;
 
-        if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
-            newStyle = DanceStyle.Fast;
-        else if (Input.GetMouseButton(0))
-            newStyle = DanceStyle.Slow;
-        else if (Input.GetMouseButton(1))
-            newStyle = DanceStyle.Average;
-        else
-            newStyle = DanceStyle.Idle;
+            AssignStyle(newStyle);
+            timer = 0f;
+        }
 
-        AssignStyle(newStyle);
+        if (timer > Mathf.Max(player.DanceStyle.SecFromLastTap, 0.5f))
+        {
+            if (player.DanceStyle.Name == "Fast")
+                AssignStyle(DanceStyle.Average);
+            else
+                AssignStyle(DanceStyle.Slow);
+
+            timer = 0f;
+        }
+
+        var isMoving = (movement.Destination - transform.position).magnitude > 0.5f;
+        if (player.DanceStyle.Name == "Slow" && !isMoving)
+            AssignStyle(DanceStyle.Idle);
+        if (player.DanceStyle.Name == "Idle" && isMoving)
+            AssignStyle(DanceStyle.Slow);
     }
 
     private void AssignStyle(DanceStyle style)

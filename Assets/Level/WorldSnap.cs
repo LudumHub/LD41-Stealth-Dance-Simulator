@@ -6,6 +6,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class WorldSnap : MonoBehaviour {
     Vector3 prevPosition = Vector3.zero;
+    static Color defaultColor = Color.green;
 
     void Update () {
         if (!Application.isPlaying &&
@@ -89,14 +90,15 @@ public class WorldSnap : MonoBehaviour {
         return Mathf.RoundToInt(value / cellsize);
     }
 
-    public Color multColor = Color.white;
+    [NonSerialized]
+    public Color multColor = defaultColor;
     private void OnTriggerStay2D(Collider2D other)
     {
         if (transform.position != awakeCoords) return; //Wait for StartingAnimation ending HACK
 
         var dancer = other.GetComponent<FloorPainter>();
         if (dancer == null) return;
-        if (dancer.tag == "Dancer" || multColor == Color.white)
+        if (dancer.tag == "Dancer" || multColor == defaultColor)
         multColor = dancer.DanceStyle.PlayerColor;
     }
 
@@ -104,7 +106,7 @@ public class WorldSnap : MonoBehaviour {
     {
         var dancer = other.GetComponent<FloorPainter>();
         if (dancer == null) return;
-        multColor = Color.white;
+        multColor = defaultColor;
     }
 }
 
