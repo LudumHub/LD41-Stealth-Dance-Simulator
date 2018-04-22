@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             timer = 0f;
         }
 
-        var isMoving = (movement.Destination - transform.position).magnitude > 0.5f;
+        var isMoving = (movement.Destination - transform.position).magnitude > 1f;
         if (player.DanceStyle.Name == "Slow" && !isMoving)
             AssignStyle(DanceStyle.Idle);
         if (player.DanceStyle.Name == "Idle" && isMoving)
