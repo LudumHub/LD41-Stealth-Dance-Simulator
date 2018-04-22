@@ -19,6 +19,7 @@ public static class StandardAnimations
                     obj = new GameObject("StandardAnimations");
                 }
 
+                GameObject.DontDestroyOnLoad(obj);
                 instanceHolder = obj.GetComponent<StandardAnimationsInstance>();
                 if (null == instanceHolder)
                 {

@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/UltimateDanceFloor.unity
+    guid: da7704b51059a274c86fe03ea98da629
+  - enabled: 1
+    path: Assets/NotSoCoolDanceFloor.unity
+    guid: 4c1309c66986b81428bba8c65ae1ff8f
