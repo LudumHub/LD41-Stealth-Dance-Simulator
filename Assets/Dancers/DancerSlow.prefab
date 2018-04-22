@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 50543252551990946}
   - component: {fileID: 114120378504417966}
   - component: {fileID: 114105619328034398}
-  - component: {fileID: 61662371323301828}
   m_Layer: 0
   m_Name: DancerSlow
   m_TagString: Untagged
@@ -103,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1160001920710238}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.123561, y: -0.7207305, z: 0.09734006}
+  m_LocalPosition: {x: 4.17, y: -2.3, z: 0.09734006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4786306324402414}
@@ -173,31 +172,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.1}
   serializedVersion: 2
   m_Radius: 0.25
---- !u!61 &61662371323301828
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1160001920710238}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.02076757, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.95846486, y: 1}
-  m_EdgeRadius: 0
 --- !u!95 &95872646470816498
 Animator:
   serializedVersion: 3

@@ -15,6 +15,10 @@ public class Patrol : MonoBehaviour
     {
         IsActive = true;
         movement = GetComponent<Movement>();
+
+        if (path == null)
+            return;
+
         ResetPoints();
         if (restOnStart)
             RestAndMoveNext();
@@ -29,6 +33,9 @@ public class Patrol : MonoBehaviour
 
     private void Update()
     {
+        if (path == null)
+            return;
+
         if (!IsActive) return;
         if (IsResting)
         {

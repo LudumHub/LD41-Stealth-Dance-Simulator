@@ -17,7 +17,10 @@ public class WorldSnap : MonoBehaviour {
     Vector3 awakeCoords;
     void Awake()
     {
-        UpdateCellCoords();
+        if (!Application.isPlaying)
+            Snap();
+        else
+            UpdateCellCoords();
         awakeCoords = transform.position;
 
         if (Application.isPlaying)
