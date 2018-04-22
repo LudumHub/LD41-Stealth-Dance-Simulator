@@ -48,7 +48,7 @@ public class DanceStyle
             return new DanceStyle
             {
                 Name = "Fast",
-                SecFromLastTap = 0.5f,
+                SecFromLastTap = 0.4f,
                 PlayerAnimation = "fast",
                 MaxSpeed = 3f,
                 PlayerColor = Color.red
@@ -63,7 +63,7 @@ public class DanceStyle
             return new DanceStyle
             {
                 Name = "Idle",
-                PlayerAnimation = "idle",
+                PlayerAnimation = "slow",
                 PlayerColor = Color.blue
             };
         }

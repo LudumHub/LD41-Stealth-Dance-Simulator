@@ -43,20 +43,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (timer > Mathf.Max(player.DanceStyle.SecFromLastTap, 0.5f))
-        {
-            if (player.DanceStyle.Name == "Fast")
-                AssignStyle(DanceStyle.Average);
-            else
                 AssignStyle(DanceStyle.Slow);
 
-            timer = 0f;
-        }
-
-        var isMoving = (movement.Destination - transform.position).magnitude > 0.5f;
-        if (player.DanceStyle.Name == "Slow" && !isMoving)
+        if (Input.GetMouseButton(1))
             AssignStyle(DanceStyle.Idle);
-        if (player.DanceStyle.Name == "Idle" && isMoving)
-            AssignStyle(DanceStyle.Slow);
     }
 
     private void AssignStyle(DanceStyle style)

@@ -17,7 +17,10 @@ public class WorldSnap : MonoBehaviour {
     Vector3 awakeCoords;
     void Awake()
     {
-        UpdateCellCoords();
+        if (!Application.isPlaying)
+            Snap();
+        else
+            UpdateCellCoords();
         awakeCoords = transform.position;
 
         if (Application.isPlaying)
@@ -42,6 +45,7 @@ public class WorldSnap : MonoBehaviour {
     }
 
     public SpriteRenderer spriteRenderer;
+    static Color grey = new Color(0.9f, 0.9f, 0.9f);
     IEnumerator DanceFloor()
     {
         if (coords.x % 2 == 0)
@@ -50,9 +54,9 @@ public class WorldSnap : MonoBehaviour {
         spriteRenderer = GetComponent<SpriteRenderer>();
         while (true)
         {
-            spriteRenderer.color = Color.gray * multColor;
+            spriteRenderer.color = grey * multColor;
             yield return new WaitForSeconds(1f);
-            spriteRenderer.color = Color.white * multColor;
+            spriteRenderer.color = Color.white * multColor * 2;
             yield return new WaitForSeconds(1f);
         }
     }
@@ -64,7 +68,8 @@ public class WorldSnap : MonoBehaviour {
         UpdateCellCoords();
 
         transform.localPosition = new Vector3(coords.x * cellSize,
-            coords.y * cellSize / 2, transform.localPosition.z);
+            coords.y * cellSize / 2, 
+            transform.localPosition.z + (coords.x * 0.1f + coords.y * 0.2f));
 
         prevPosition = transform.position;
     }
