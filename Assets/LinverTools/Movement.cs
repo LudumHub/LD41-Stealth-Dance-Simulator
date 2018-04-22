@@ -8,10 +8,16 @@ public class Movement: MonoBehaviour
     public float MaxSpeed = 1f;
     private Rigidbody2D myRigidbody;
 
+    public bool doesFlipsAllowed = true;
+    Vector3 NormalFlip;
+    Vector3 MirroredFlip;
     private void Awake()
     {
         Destination = transform.position;
         myRigidbody = GetComponent<Rigidbody2D>();
+
+        NormalFlip = transform.localScale;
+        MirroredFlip = new Vector3(NormalFlip.x * -1, NormalFlip.y, NormalFlip.z);
     }
 
     private void Update()
@@ -22,6 +28,11 @@ public class Movement: MonoBehaviour
             myRigidbody.MovePosition(targetPosition);
         else
             transform.position = targetPosition;
+
+        if (doesFlipsAllowed)
+            transform.localScale = transform.position.x < Destination.x ? NormalFlip : MirroredFlip;
+        else
+            transform.localScale = NormalFlip;
     }
 
     public void Stop()

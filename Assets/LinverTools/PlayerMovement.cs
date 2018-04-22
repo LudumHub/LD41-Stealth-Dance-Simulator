@@ -61,6 +61,9 @@ public class PlayerMovement : MonoBehaviour
             animator.ResetTrigger(currentStyle.PlayerAnimation);
         animator.SetTrigger(style.PlayerAnimation);
         player.DanceStyle = style;
+
+        movement.doesFlipsAllowed =
+            !(style.Name == "Average");
     }
 
     private void MovePlayer()

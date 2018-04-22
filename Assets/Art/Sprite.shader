@@ -15,6 +15,7 @@
             }
            
             Lighting Off
+			Cull Off
             Blend SrcAlpha OneMinusSrcAlpha
            
             Pass
@@ -62,7 +63,7 @@
                     if (luminance > _Edge)
                         diffuse *= i.color;
                     else
-                        diffuse += i.color * 0.2f;//1-2*(1-diffuse)*(1-i.color);
+                        diffuse += i.color * 0.2f;
                    
                     diffuse.a  = oldAlpha * i.color.a;
                     return diffuse;
