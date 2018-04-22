@@ -38,14 +38,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4355927931056510}
   - component: {fileID: 114232686308297734}
-  - component: {fileID: 58176480520717746}
   - component: {fileID: 58198227648224244}
   - component: {fileID: 50490410703405798}
   - component: {fileID: 114634476693919582}
   - component: {fileID: 114333323703446022}
+  - component: {fileID: 61008006928366948}
   m_Layer: 0
   m_Name: DancerPolice
-  m_TagString: Untagged
+  m_TagString: Dancer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1170959401778114}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.38, y: -2.93, z: 0.09734006}
+  m_LocalPosition: {x: 3.13, y: 1.67, z: 0.09734006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4609009252080402}
@@ -158,21 +158,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58176480520717746
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1170959401778114}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
 --- !u!58 &58198227648224244
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -188,6 +173,31 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.1}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!61 &61008006928366948
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1170959401778114}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.97, y: 1.81}
+  m_EdgeRadius: 0
 --- !u!95 &95336237778937960
 Animator:
   serializedVersion: 3
@@ -240,8 +250,8 @@ MonoBehaviour:
     PlayerAnimation: 
     PlayerColor: {r: 0, g: 0, b: 1, a: 1}
   AlertMark: {fileID: 114643220847304818}
-  BodyCollider: {fileID: 58176480520717746}
-  AreaOfEffect: {fileID: 58176480520717746}
+  BodyCollider: {fileID: 0}
+  AreaOfEffect: {fileID: 0}
 --- !u!114 &114333323703446022
 MonoBehaviour:
   m_ObjectHideFlags: 1
