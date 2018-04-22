@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [ExecuteInEditMode]
@@ -68,7 +69,7 @@ public class WorldSnap : MonoBehaviour {
         UpdateCellCoords();
 
         transform.localPosition = new Vector3(coords.x * cellSize,
-            coords.y * cellSize / 2, 
+            coords.y * cellSize / 2,
             transform.localPosition.z + (coords.x * 0.1f + coords.y * 0.2f));
 
         prevPosition = transform.position;
@@ -97,21 +98,46 @@ public class WorldSnap : MonoBehaviour {
 
     [NonSerialized]
     public Color multColor = defaultColor;
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (transform.position != awakeCoords) return; //Wait for StartingAnimation ending HACK
 
-        var dancer = other.GetComponent<FloorPainter>();
-        if (dancer == null) return;
-        if (dancer.tag == "Dancer" || multColor == defaultColor)
-        multColor = dancer.DanceStyle.PlayerColor;
+    private FloorPainter staticPainter;
+    private readonly List<FloorPainter> movingPainters = new List<FloorPainter>();
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        var painter = other.GetComponent<FloorPainter>();
+        if (painter == null) return;
+        var movement = other.GetComponent<Movement>();
+        if (movement == null)
+            staticPainter = painter;
+        else if (!movingPainters.Contains(painter))
+            movingPainters.Add(painter);
+        UpdateColor();
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        var dancer = other.GetComponent<FloorPainter>();
-        if (dancer == null) return;
-        multColor = defaultColor;
+        var painter = other.GetComponent<FloorPainter>();
+        if (painter == null) return;
+        if (staticPainter == painter)
+            staticPainter = null;
+        else
+            movingPainters.Remove(painter);
+        UpdateColor();
+    }
+
+    private void UpdateColor()
+    {
+        if (movingPainters.Any())
+            UpdateColor(movingPainters.Last());
+        else if (staticPainter != null)
+            UpdateColor(staticPainter);
+        else
+            multColor = defaultColor;
+    }
+
+    private void UpdateColor(FloorPainter painter)
+    {
+        multColor = painter.DanceStyle.PlayerColor;
     }
 }
 
