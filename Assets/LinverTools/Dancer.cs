@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-public class Dancer : MonoBehaviour
+public class Dancer : FloorPainter
 {
     public AlertMark AlertMark;
-    public DanceStyle DanceStyle;
     public Collider2D BodyCollider;
     public Collider2D AreaOfEffect;
 

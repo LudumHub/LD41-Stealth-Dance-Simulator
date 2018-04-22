@@ -11,12 +11,10 @@ public class Player : MonoBehaviour
     private float timeSinceLastSuspiciousnessUpdate;
     public DanceStyle DanceStyle;
     private Movement movement;
-    private float movementSpeed;
 
     private void Awake()
     {
         movement = GetComponent<Movement>();
-        movementSpeed = movement.MaxSpeed;
     }
 
     public float Suspiciousness
@@ -50,12 +48,12 @@ public class Player : MonoBehaviour
 
     public void SlowDown()
     {
-        movement.MaxSpeed = movementSpeed / 10f;
+        movement.MaxSpeed = DanceStyle.MaxSpeed / 10f;
     }
 
     public void RestoreSpeed()
     {
-        movement.MaxSpeed = movementSpeed;
+        movement.MaxSpeed = DanceStyle.MaxSpeed;
     }
 
     public IEnumerator PlayNani()

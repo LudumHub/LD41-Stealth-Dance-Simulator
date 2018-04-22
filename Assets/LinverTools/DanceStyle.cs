@@ -8,6 +8,7 @@ public class DanceStyle
     public string Name;
     public float MinClicksPerSecond;
     public float MaxClicksPerSecond;
+    public float MaxSpeed;
     public string PlayerAnimation;
     public Color PlayerColor;
 
@@ -21,6 +22,7 @@ public class DanceStyle
                 MinClicksPerSecond = 0f,
                 MaxClicksPerSecond = 1f,
                 PlayerAnimation = "idle",
+                MaxSpeed = 0.8f,
                 PlayerColor = Color.white
             };
         }
@@ -36,6 +38,7 @@ public class DanceStyle
                 MinClicksPerSecond = 1f,
                 MaxClicksPerSecond = 2f,
                 PlayerAnimation = "slow",
+                MaxSpeed = 1f,
                 PlayerColor = Color.green
             };
         }
@@ -51,6 +54,7 @@ public class DanceStyle
                 MinClicksPerSecond = 2f,
                 MaxClicksPerSecond = 4f,
                 PlayerAnimation = "average",
+                MaxSpeed = 2f,
                 PlayerColor = Color.yellow
             };
         }
@@ -66,6 +70,7 @@ public class DanceStyle
                 MinClicksPerSecond = 4f,
                 MaxClicksPerSecond = float.MaxValue,
                 PlayerAnimation = "fast",
+                MaxSpeed = 3f,
                 PlayerColor = Color.red
             };
         }

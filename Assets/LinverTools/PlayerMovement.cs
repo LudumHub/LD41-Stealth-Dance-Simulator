@@ -12,9 +12,6 @@ public class PlayerMovement : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Animator animator;
     private Player player;
-    [SerializeField] private float idleRadius = 50f;
-    [SerializeField] private float slowRadius = 100f;
-    [SerializeField] private float averageRadius = 200f;
 
     private void Awake()
     {
@@ -31,18 +28,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Dance()
     {
-        var screenPosition = Camera.main.WorldToScreenPoint(transform.position);
-        var mousePosition = Input.mousePosition;
-        var distance = Vector3.Distance(screenPosition, mousePosition);
         DanceStyle newStyle;
-        if (distance < idleRadius)
-            newStyle = DanceStyle.Idle;
-        else if (distance < slowRadius)
+
+        if (Input.GetMouseButton(0) && Input.GetMouseButton(1))
+            newStyle = DanceStyle.Fast;
+        else if (Input.GetMouseButton(0))
             newStyle = DanceStyle.Slow;
-        else if (distance < averageRadius)
+        else if (Input.GetMouseButton(1))
             newStyle = DanceStyle.Average;
         else
-            newStyle = DanceStyle.Fast;
+            newStyle = DanceStyle.Idle;
+
         AssignStyle(newStyle);
     }
 
@@ -52,9 +48,9 @@ public class PlayerMovement : MonoBehaviour
         if (currentStyle != null && currentStyle.Name == style.Name)
             return;
         spriteRenderer.color = style.PlayerColor;
-        // Hack?
-        movement.MaxSpeed = style.MinClicksPerSecond;
-        if (currentStyle != null)
+        movement.MaxSpeed = style.MaxSpeed;
+
+        if (currentStyle != null && currentStyle.PlayerAnimation != "")
             animator.ResetTrigger(currentStyle.PlayerAnimation);
         animator.SetTrigger(style.PlayerAnimation);
         player.DanceStyle = style;
@@ -62,12 +58,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        if (Input.GetMouseButtonUp(0))
-        {
-            movement.Stop();
-            return;
-        }
-        if (!Input.GetMouseButton(0)) return;
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         var destination = mousePosition;
         destination.z = transform.position.z;
