@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Movement))]
@@ -70,5 +71,28 @@ public class Player : MonoBehaviour
     public void Stop()
     {
         movement.enabled = false;
+    }
+
+    static float selfSuspicionessDelay = 0.5f;
+    private float timer = selfSuspicionessDelay;
+    public Color CorrectColor;
+    private void LateUpdate()
+    {
+        timer += Time.deltaTime;
+        if (timer > 1 + selfSuspicionessDelay)
+        {
+            timer--;
+            var cell = FloorDictionary.instance.FindCellByWordspaceCoords(transform.position);
+            if (cell == null) return;
+
+            CorrectColor = cell.multColor;
+            if (CorrectColor != DanceStyle.PlayerColor)
+            {
+                alertMark.SetYellow();
+                alertMark.Appear();
+            }
+            else
+                alertMark.Disappear();
+        }
     }
 }

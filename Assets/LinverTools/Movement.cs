@@ -10,6 +10,7 @@ public class Movement: MonoBehaviour
 
     private void Awake()
     {
+        Destination = transform.position;
         myRigidbody = GetComponent<Rigidbody2D>();
     }
 

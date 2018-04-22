@@ -6,6 +6,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class WorldSnap : MonoBehaviour {
     Vector3 prevPosition = Vector3.zero;
+
     void Update () {
         if (!Application.isPlaying &&
             prevPosition != transform.position)
@@ -24,12 +25,14 @@ public class WorldSnap : MonoBehaviour {
 
     IEnumerator Start()
     {
+        FloorDictionary.instance.Add(coords, this);
+
         if (!Application.isPlaying)
             yield return null;
 
         StartCoroutine(DanceFloor());
 
-        yield return new WaitForSeconds(Mathf.Abs(x + y) * 0.1f);
+        yield return new WaitForSeconds(Mathf.Abs(coords.x + coords.y) * 0.1f);
         while (transform.position != awakeCoords)
         {
             transform.position = Vector3.MoveTowards(transform.position, awakeCoords, Time.deltaTime * 10);
@@ -37,54 +40,63 @@ public class WorldSnap : MonoBehaviour {
         }
     }
 
+    public SpriteRenderer spriteRenderer;
     IEnumerator DanceFloor()
     {
-        if (x % 2 == 0)
+        if (coords.x % 2 == 0)
             yield return new WaitForSeconds(1f);
 
-        var renderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         while (true)
         {
-            renderer.color = Color.gray * multColor;
+            spriteRenderer.color = Color.gray * multColor;
             yield return new WaitForSeconds(1f);
-            renderer.color = Color.white * multColor;
+            spriteRenderer.color = Color.white * multColor;
             yield return new WaitForSeconds(1f);
         }
     }
 
     static float cellSize = 0.6f;
-    float x;
-    float y;
+    Vector2 coords;
     private void Snap()
     {
         UpdateCellCoords();
 
-        transform.localPosition = new Vector3(x * cellSize,
-            y * cellSize / 2, transform.localPosition.z);
+        transform.localPosition = new Vector3(coords.x * cellSize,
+            coords.y * cellSize / 2, transform.localPosition.z);
 
         prevPosition = transform.position;
     }
 
     private void UpdateCellCoords()
     {
-        x = GetSnapValue(transform.localPosition.x, cellSize);
-        y = GetSnapValue(transform.localPosition.y, cellSize / 2);
+        coords = GetIsometryCoords(transform.localPosition);
+    }
+
+    public static Vector2 GetIsometryCoords(Vector3 worldspace)
+    {
+        var x = GetSnapValue(worldspace.x, cellSize);
+        var y = GetSnapValue(worldspace.y, cellSize / 2);
 
         if ((x + y) % 2 == 0)
             x++;
+
+        return new Vector2(x, y);
     }
 
-    private int GetSnapValue(float value, float cellsize)
+    private static int GetSnapValue(float value, float cellsize)
     {
         return Mathf.RoundToInt(value / cellsize);
     }
 
-    private Color multColor = Color.white;
-
+    public Color multColor = Color.white;
     private void OnTriggerStay2D(Collider2D other)
     {
+        if (transform.position != awakeCoords) return; //Wait for StartingAnimation ending HACK
+
         var dancer = other.GetComponent<FloorPainter>();
         if (dancer == null) return;
+        if (dancer.tag == "Dancer" || multColor == Color.white)
         multColor = dancer.DanceStyle.PlayerColor;
     }
 

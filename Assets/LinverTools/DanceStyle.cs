@@ -22,7 +22,7 @@ public class DanceStyle
                 MinClicksPerSecond = 0f,
                 MaxClicksPerSecond = 1f,
                 PlayerAnimation = "idle",
-                MaxSpeed = 0.8f,
+                MaxSpeed = 2f,
                 PlayerColor = Color.white
             };
         }
