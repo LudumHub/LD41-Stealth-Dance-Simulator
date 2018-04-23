@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 public class Movement: MonoBehaviour
 {
     [SerializeField] private Vector3 smoothDampVelocity;
@@ -24,6 +25,7 @@ public class Movement: MonoBehaviour
     {
         var targetPosition = Vector3.SmoothDamp(transform.position, Destination,
             ref smoothDampVelocity, SmoothDampTime, MaxSpeed);
+
         if (myRigidbody != null)
             myRigidbody.MovePosition(targetPosition);
         else
@@ -33,6 +35,8 @@ public class Movement: MonoBehaviour
             transform.localScale = transform.position.x < Destination.x ? NormalFlip : MirroredFlip;
         else
             transform.localScale = NormalFlip;
+
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y*10);
     }
 
     public void Stop()

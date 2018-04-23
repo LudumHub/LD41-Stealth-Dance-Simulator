@@ -20,7 +20,7 @@ public class DanceStyle
                 Name = "Slow",
                 SecFromLastTap = float.MaxValue,
                 PlayerAnimation = "slow",
-                MaxSpeed = 1f,
+                MaxSpeed = 2f,
                 PlayerColor = Color.green
             };
         }
