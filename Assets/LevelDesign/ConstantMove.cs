@@ -8,10 +8,12 @@ public class ConstantMove : MonoBehaviour {
     public float Speed = 1f;
     public float t = 0f;
     public float startingT = -9f;
+    public bool shouldReset = true;
 
     private void Awake()
     {
-        t = startingT;
+        if (shouldReset)
+            t = startingT;
     }
 
     void LateUpdate () {

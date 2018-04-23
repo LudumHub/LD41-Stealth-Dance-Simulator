@@ -25,7 +25,7 @@ public class DanceStyle
                 Name = "Slow",
                 SecFromLastTap = float.MaxValue,
                 PlayerAnimation = "slow",
-                MaxSpeed = 2f,
+                MaxSpeed = 4f,
                 PlayerColor = DanceStyle.greenColor
             };
         }
@@ -40,7 +40,7 @@ public class DanceStyle
                 Name = "Average",
                 SecFromLastTap = 1f,
                 PlayerAnimation = "average",
-                MaxSpeed = 2f,
+                MaxSpeed = 3f,
                 PlayerColor = DanceStyle.yellowColor
             };
         }
@@ -55,7 +55,7 @@ public class DanceStyle
                 Name = "Fast",
                 SecFromLastTap = 0.4f,
                 PlayerAnimation = "fast",
-                MaxSpeed = 3f,
+                MaxSpeed = 6f,
                 PlayerColor = DanceStyle.redColor
             };
         }
