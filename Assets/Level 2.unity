@@ -1241,11 +1241,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4490748456934334, guid: fbae7798af045724da9092875983f056, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 12.8
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4490748456934334, guid: fbae7798af045724da9092875983f056, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -9.18
+      value: -9.32
       objectReference: {fileID: 0}
     - target: {fileID: 4490748456934334, guid: fbae7798af045724da9092875983f056, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1270,6 +1270,10 @@ Prefab:
     - target: {fileID: 4490748456934334, guid: fbae7798af045724da9092875983f056, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150838804995656, guid: fbae7798af045724da9092875983f056, type: 2}
+      propertyPath: m_Name
+      value: DancerFastBOY
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbae7798af045724da9092875983f056, type: 2}
