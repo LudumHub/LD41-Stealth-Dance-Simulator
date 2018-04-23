@@ -12272,6 +12272,31 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224046621682301092, guid: 1e081e49ede133945b6a45f327ca9655,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 648.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 224046621682301092, guid: 1e081e49ede133945b6a45f327ca9655,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 224046621682301092, guid: 1e081e49ede133945b6a45f327ca9655,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 8.576263
+      objectReference: {fileID: 0}
+    - target: {fileID: 224058899908237476, guid: 1e081e49ede133945b6a45f327ca9655,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 279
+      objectReference: {fileID: 0}
+    - target: {fileID: 224058899908237476, guid: 1e081e49ede133945b6a45f327ca9655,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e081e49ede133945b6a45f327ca9655, type: 2}
   m_IsPrefabParent: 0
@@ -15315,7 +15340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c5b3b490104f0a8933321c36af0512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portrait: 2
+  portrait: 0
   text: Man, this party stinks. I fucking hate these people.
 --- !u!4 &2049133569
 Transform:
