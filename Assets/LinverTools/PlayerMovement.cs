@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update ()
     {
-        if (player.IsBusted) return;
+        if (player.HasAlibi) return;
         speedCounter.Update();
         Dance();
         MovePlayer();

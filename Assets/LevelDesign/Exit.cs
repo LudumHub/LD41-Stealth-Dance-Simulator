@@ -8,7 +8,7 @@ public class Exit : MonoBehaviour {
         var player = other.gameObject.GetComponent<Player>();
         if (player == null)
             return;
-
+        player.HasAlibi = true;
         Fade.instance.LoadNextLevel();
     }
 }

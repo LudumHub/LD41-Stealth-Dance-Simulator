@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public bool IsBusted { get; private set; }
+    public bool HasAlibi { get; set; }
 
     public bool StillBaka { get; set; }
 
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
 
     public void RaiseSuspiciousness()
     {
-        if (IsBusted) return;
+        if (HasAlibi) return;
         StillBaka = true;
         Suspiciousness += SuspiciousnessPoint * Time.deltaTime;
         timeSinceLastSuspiciousnessUpdate = 0f;
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (IsBusted)
+        if (HasAlibi)
         {
             if (Input.GetMouseButtonDown(0))
                 bustingScene.HandleClick();
@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
     public Color CorrectColor;
     private void LateUpdate()
     {
-        if (IsBusted) return;
+        if (HasAlibi) return;
         timer += Time.deltaTime;
         if (timer > 1 + selfSuspicionessDelay)
         {
@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
 
     private void StartBusting()
     {
-        IsBusted = true;
+        HasAlibi = true;
         movement.enabled = false;
         bustingScene.StartBusting();
     }
