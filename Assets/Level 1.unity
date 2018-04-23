@@ -331,10 +331,12 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 32784753}
-  m_Text: "Follow her dance \nwith correct click speed"
+  m_Text: 'Click in her rhythm
+
+    to be hidden'
   m_OffsetZ: 0
   m_CharacterSize: 1
-  m_LineSpacing: 0.8
+  m_LineSpacing: 1.21
   m_Anchor: 0
   m_Alignment: 1
   m_TabSize: 4
@@ -1705,6 +1707,11 @@ Prefab:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224335972219455766, guid: 1e081e49ede133945b6a45f327ca9655,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e081e49ede133945b6a45f327ca9655, type: 2}
   m_IsPrefabParent: 0
@@ -1829,7 +1836,7 @@ TextMesh:
   m_Text: "Move mouse to \nset the dance direction"
   m_OffsetZ: 0
   m_CharacterSize: 1
-  m_LineSpacing: 0.8
+  m_LineSpacing: 1.18
   m_Anchor: 0
   m_Alignment: 1
   m_TabSize: 4
@@ -4200,10 +4207,12 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 717783196}
-  m_Text: "Follow her dance \nwith correct click speed"
+  m_Text: 'Click in her rhythm
+
+    to be hidden'
   m_OffsetZ: 0
   m_CharacterSize: 1
-  m_LineSpacing: 0.8
+  m_LineSpacing: 1.21
   m_Anchor: 0
   m_Alignment: 1
   m_TabSize: 4
@@ -4255,7 +4264,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 717783196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.68, y: 1.38, z: 18.189453}
+  m_LocalPosition: {x: 8.28, y: 0.38, z: 18.189453}
   m_LocalScale: {x: 0.090604596, y: 0.09472298, z: 0.41183904}
   m_Children:
   - {fileID: 32784754}
@@ -6781,7 +6790,7 @@ TextMesh:
   m_Text: "Move mouse to \nset the dance direction"
   m_OffsetZ: 0
   m_CharacterSize: 1
-  m_LineSpacing: 0.8
+  m_LineSpacing: 1.18
   m_Anchor: 0
   m_Alignment: 1
   m_TabSize: 4
@@ -6833,7 +6842,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1177222080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.07, y: -1.21, z: 18.189453}
+  m_LocalPosition: {x: 4.47, y: -1.33, z: 18.189453}
   m_LocalScale: {x: 0.090604596, y: 0.09472298, z: 0.41183904}
   m_Children:
   - {fileID: 315534363}
