@@ -6399,7 +6399,7 @@ MonoBehaviour:
   Speed: 1
   t: 49.9
   startingT: -5
-  shouldReset: 0
+  shouldReset: 1
 --- !u!1 &507927367
 GameObject:
   m_ObjectHideFlags: 0
