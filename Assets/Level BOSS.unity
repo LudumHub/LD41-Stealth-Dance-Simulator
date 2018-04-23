@@ -8654,7 +8654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portrait: 2
-  text: Bratishka, ya tebe pokushat prines!
+  text: Who are you, stranger? Let your dance talk!
 --- !u!4 &741800361
 Transform:
   m_ObjectHideFlags: 0

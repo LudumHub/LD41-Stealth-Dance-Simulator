@@ -74,7 +74,7 @@ public class DialogueCanvas : MonoBehaviour
     public IEnumerator StartVictorySequence()
     {
         Portrait = Portrait.Boss;
-        Text = "Oh my, you've got some MOVES, boy!";
+        Text = "Oh my, I like you, boy!";
         Appear();
         yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
         myAnimator.SetTrigger("time");
