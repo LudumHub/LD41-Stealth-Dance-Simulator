@@ -6,14 +6,15 @@ using UnityEngine;
 public class BustingScene : MonoBehaviour
 {
     [SerializeField] private DJ dj;
-    [SerializeField] private DialogueCanvas dialogueCanvas;
     [SerializeField] private AudioSource bustedMusicBox;
     [SerializeField] private AudioSource failureMusicBox;
+    private DialogueCanvas dialogueCanvas;
     private Animator animator;
     private bool isClicked;
 
     private void Awake()
     {
+        dialogueCanvas = FindObjectOfType<DialogueCanvas>();
         animator = GetComponent<Animator>();
     }
 

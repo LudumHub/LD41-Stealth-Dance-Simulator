@@ -9,6 +9,6 @@ public class Exit : MonoBehaviour {
         if (player == null)
             return;
 
-        Fade.instance.ResetLevel();
+        Fade.instance.LoadNextLevel();
     }
 }
