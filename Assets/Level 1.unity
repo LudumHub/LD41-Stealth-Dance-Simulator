@@ -333,7 +333,7 @@ TextMesh:
   m_GameObject: {fileID: 32784753}
   m_Text: 'Click in her rhythm
 
-    to be hidden'
+    to stay hidden'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1.21
@@ -869,6 +869,10 @@ Prefab:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 165126142}
+    - target: {fileID: 1957158957302872, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
   m_IsPrefabParent: 0
@@ -1783,6 +1787,10 @@ Prefab:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 310622014}
+    - target: {fileID: 1957158957302872, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
   m_IsPrefabParent: 0
@@ -2930,6 +2938,10 @@ Prefab:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 467093987}
+    - target: {fileID: 1957158957302872, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
   m_IsPrefabParent: 0
@@ -3274,6 +3286,10 @@ Prefab:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 534197467}
+    - target: {fileID: 1957158957302872, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
   m_IsPrefabParent: 0
@@ -3466,6 +3482,10 @@ Prefab:
     - target: {fileID: 4045265016139148, guid: 70d3ade6b74f2a745a327f3cadbd7fee, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018780015189710, guid: 70d3ade6b74f2a745a327f3cadbd7fee, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 70d3ade6b74f2a745a327f3cadbd7fee, type: 2}
@@ -3993,6 +4013,10 @@ Prefab:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 668679954}
+    - target: {fileID: 1957158957302872, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
   m_IsPrefabParent: 0
@@ -4074,6 +4098,10 @@ Prefab:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 686708584}
+    - target: {fileID: 1957158957302872, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
   m_IsPrefabParent: 0
@@ -4209,7 +4237,7 @@ TextMesh:
   m_GameObject: {fileID: 717783196}
   m_Text: 'Click in her rhythm
 
-    to be hidden'
+    to stay hidden'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1.21
@@ -4264,7 +4292,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 717783196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.28, y: 0.38, z: 18.189453}
+  m_LocalPosition: {x: 9.29, y: 0.92, z: 18.189453}
   m_LocalScale: {x: 0.090604596, y: 0.09472298, z: 0.41183904}
   m_Children:
   - {fileID: 32784754}
@@ -4339,6 +4367,10 @@ Prefab:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 717906082}
+    - target: {fileID: 1957158957302872, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
   m_IsPrefabParent: 0
@@ -4420,6 +4452,10 @@ Prefab:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 727662288}
+    - target: {fileID: 1957158957302872, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
   m_IsPrefabParent: 0
@@ -6779,7 +6815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!102 &1177222081
 TextMesh:
   serializedVersion: 3
@@ -8005,6 +8041,10 @@ Prefab:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 1538028299}
+    - target: {fileID: 1957158957302872, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4702a26525311c44686704f665ef7b7a, type: 2}
   m_IsPrefabParent: 0
@@ -10602,6 +10642,10 @@ Prefab:
     - target: {fileID: 4093038277478274, guid: 24298c840c2754f4dbfa20e825d362e8, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894650935388890, guid: 24298c840c2754f4dbfa20e825d362e8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24298c840c2754f4dbfa20e825d362e8, type: 2}
