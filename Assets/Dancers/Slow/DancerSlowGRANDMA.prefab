@@ -20,12 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4636077271008708}
   - component: {fileID: 114925891422704852}
-  - component: {fileID: 58898023889615736}
   - component: {fileID: 50543252551990946}
   - component: {fileID: 114120378504417966}
   - component: {fileID: 114105619328034398}
+  - component: {fileID: 70635260857311470}
   m_Layer: 0
-  m_Name: DancerSlow
+  m_Name: DancerSlowGRANDMA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,7 +89,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1894239837628682}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.122, z: 0}
+  m_LocalPosition: {x: -0.24099997, y: 2.057, z: 0}
   m_LocalScale: {x: 0.5, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 4636077271008708}
@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1160001920710238}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.17, y: -2.3, z: 0.09734006}
+  m_LocalPosition: {x: 3.08, y: -0.66, z: 0.09734006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4786306324402414}
@@ -118,7 +118,7 @@ Transform:
   m_GameObject: {fileID: 1708834664705332}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.34, z: 1}
-  m_LocalScale: {x: 3, y: 6, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4786306324402414}
   m_RootOrder: 0
@@ -130,7 +130,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1906661551397622}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.261, y: -0.255, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4741658875416434}
@@ -157,8 +157,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58898023889615736
-CircleCollider2D:
+--- !u!70 &70635260857311470
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -169,9 +169,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.1}
-  serializedVersion: 2
-  m_Radius: 0.25
+  m_Offset: {x: 0, y: 0.21}
+  m_Size: {x: 1.29, y: 0.4}
+  m_Direction: 1
 --- !u!95 &95872646470816498
 Animator:
   serializedVersion: 3
@@ -181,7 +181,7 @@ Animator:
   m_GameObject: {fileID: 1906661551397622}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a644d1debd8a0d14fb264b6d948748d0, type: 2}
+  m_Controller: {fileID: 9100000, guid: beadb456d497c4e47b5490c2141a0b74, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -235,6 +235,7 @@ MonoBehaviour:
   Destination: {x: 0, y: 0, z: 0}
   SmoothDampTime: 4
   MaxSpeed: 0.5
+  doesFlipsAllowed: 1
 --- !u!114 &114921038612192632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,15 +267,15 @@ MonoBehaviour:
     PlayerAnimation: slow
     PlayerColor: {r: 0, g: 1, b: 0, a: 1}
   AlertMark: {fileID: 114921038612192632}
-  BodyCollider: {fileID: 58898023889615736}
-  AreaOfEffect: {fileID: 58898023889615736}
+  BodyCollider: {fileID: 0}
+  AreaOfEffect: {fileID: 0}
 --- !u!212 &212193141353243860
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1906661551397622}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -346,8 +347,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.6102435, g: 1, b: 0.53676474, a: 1}
+  m_Sprite: {fileID: 21300012, guid: eed2358605d677e45ab508493100bd02, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

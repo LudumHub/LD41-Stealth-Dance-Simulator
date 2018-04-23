@@ -57,15 +57,15 @@
                 fixed4 frag (v2f i) : COLOR
                 {
                     fixed4 diffuse = tex2D(_MainTex, i.uv);
-                    fixed luminance =  diffuse.r * diffuse.g * diffuse.b;
-                    fixed oldAlpha = diffuse.a;
+                    //fixed luminance =  diffuse.r * diffuse.g * diffuse.b;
+                    //fixed oldAlpha = diffuse.a;
                    
-                    if (luminance > _Edge)
-                        diffuse *= i.color;
-                    else
-                        diffuse += i.color * 0.2f;
+                    //if (luminance > _Edge)
+                    //    diffuse *= i.color;
+                    //else
+                    //    diffuse += i.color * 0.2f;
                    
-                    diffuse.a  = oldAlpha * i.color.a;
+                    //diffuse.a  = oldAlpha * i.color.a;
                     return diffuse;
                 }
                 ENDCG

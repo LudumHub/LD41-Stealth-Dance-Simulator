@@ -30,11 +30,10 @@ public class WorldSnap : MonoBehaviour {
 
     IEnumerator Start()
     {
-        FloorDictionary.instance.Add(coords, this);
-
         if (!Application.isPlaying)
             yield return null;
 
+        FloorDictionary.instance.Add(coords, this);
         StartCoroutine(DanceFloor());
 
         yield return new WaitForSeconds(Mathf.Abs(coords.x + coords.y) * 0.1f);
