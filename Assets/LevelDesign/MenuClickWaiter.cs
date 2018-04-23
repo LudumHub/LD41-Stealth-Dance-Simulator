@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MenuClickWaiter : MonoBehaviour {
-	void Update () {
+    public TimeCounter timeCounter;
+
+    void Update () {
         if (Input.GetMouseButtonDown(0))
+        {
+            timeCounter.enabled = true;
             Fade.instance.LoadNextLevel();
+        }
 	}
 }
