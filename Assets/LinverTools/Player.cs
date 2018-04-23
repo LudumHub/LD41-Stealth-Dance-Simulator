@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         movement = GetComponent<Movement>();
+        DanceStyle = DanceStyle.Slow;
     }
 
     public RectTransform SuspIndicator;
@@ -93,7 +94,7 @@ public class Player : MonoBehaviour
     }
 
     static float selfSuspicionessDelay = 0.5f;
-    private float timer = selfSuspicionessDelay;
+    private float timer = 1 + selfSuspicionessDelay;
     public Color CorrectColor;
     private void LateUpdate()
     {
@@ -105,7 +106,7 @@ public class Player : MonoBehaviour
             var cell = FloorDictionary.instance.FindCellByWordspaceCoords(transform.position);
             if (cell == null) return;
 
-            CorrectColor = cell.multColor;
+            CorrectColor = cell.multColor.a == 1f ? cell.multColor : DanceStyle.greenColor;
             if (CorrectColor != DanceStyle.PlayerColor)
             {
                 RaiseSuspiciousness();
