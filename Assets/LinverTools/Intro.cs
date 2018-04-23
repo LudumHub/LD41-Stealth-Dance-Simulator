@@ -34,7 +34,9 @@ public class Intro : MonoBehaviour
         foreach (var animator in animators)
             animator.enabled = active;
         player.GetComponent<PlayerMovement>().enabled = active;
-        FindObjectOfType<ConstantMove>().enabled = active;
+        var constantMove = FindObjectOfType<ConstantMove>();
+        if (constantMove != null)
+            constantMove.enabled = active;
         if (disablePatrols)
             foreach (var patrol in FindObjectsOfType<Patrol>())
                 patrol.enabled = active;
