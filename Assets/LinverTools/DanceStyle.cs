@@ -73,6 +73,18 @@ public class DanceStyle
         }
     }
 
+    public static DanceStyle Boss
+    {
+        get
+        {
+            return new DanceStyle
+            {
+                Name = "Boss",
+                PlayerColor = DanceStyle.bossColor
+            };
+        }
+    }
+
     public static IEnumerable<DanceStyle> AllStyles
     {
         get
@@ -81,6 +93,7 @@ public class DanceStyle
             yield return Average;
             yield return Fast;
             yield return Police;
+            yield return Boss;
         }
     }
 }

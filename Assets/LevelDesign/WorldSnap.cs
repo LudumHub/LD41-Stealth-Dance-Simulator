@@ -31,12 +31,13 @@ public class WorldSnap : MonoBehaviour {
     IEnumerator Start()
     {
         if (!Application.isPlaying)
-            yield return null;
+            yield break;
 
         FloorDictionary.instance.Add(coords, this);
         StartCoroutine(DanceFloor());
+        yield return new WaitForSeconds(Mathf.Abs(coords.x + coords.y) * 0.05f + coords.y * 0.1f);
+        StandardAnimations.DoAppearance(gameObject, 1f);
 
-        yield return new WaitForSeconds(Mathf.Abs(coords.x + coords.y) * 0.1f);
         while (transform.position != awakeCoords)
         {
             transform.position = Vector3.MoveTowards(transform.position, awakeCoords, Time.deltaTime * 10);

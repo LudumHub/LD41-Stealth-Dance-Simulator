@@ -230,7 +230,7 @@ TextureImporter:
         serializedVersion: 2
         x: 529
         y: 7
-        width: 157
+        width: 159
         height: 199
       alignment: 9
       pivot: {x: 0.39363012, y: 0.078482255}
@@ -256,9 +256,9 @@ TextureImporter:
       name: Average_F_1
       rect:
         serializedVersion: 2
-        x: 687
+        x: 688
         y: 21
-        width: 170
+        width: 169
         height: 246
       alignment: 9
       pivot: {x: 0.5473008, y: 0.024771195}
