@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 95987928886653584}
   - component: {fileID: 114744098604955864}
   - component: {fileID: 82762427444251510}
+  - component: {fileID: 82260253145427510}
   m_Layer: 0
   m_Name: DialogueCanvas
   m_TagString: Untagged
@@ -247,7 +248,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1438756232713562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.64, y: 0.31, z: -100}
+  m_LocalPosition: {x: 3.66, y: 1, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224066585089016160}
@@ -298,6 +299,86 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1438756232713562}
   m_Enabled: 1
+--- !u!82 &82260253145427510
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1537230617578358}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2543e1ee35e37524fb4b7fb438100b0b, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!82 &82762427444251510
 AudioSource:
   m_ObjectHideFlags: 1
@@ -449,7 +530,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1438756232713562}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cac5bf68d487fa43a4ca6e544eb9d61, type: 3}
   m_Name: 
@@ -459,6 +540,7 @@ MonoBehaviour:
   maxDistance: 1
   minSize: 1
   maxSize: 4
+  resetZoom: 0
   maxWaitingSecForTap: 1
   minWaitingSecForTap: 0.3
 --- !u!114 &114222094202620860
@@ -547,7 +629,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SASAI
+  m_Text: WASTED
 --- !u!114 &114384207717204650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -691,7 +773,7 @@ MonoBehaviour:
   playerPortrait: {fileID: 21300000, guid: bcfdee66b25b0a243a9e1e2a2c669069, type: 3}
   policePortrait: {fileID: 21300000, guid: e0721af3178d65449b89a5431d8850c9, type: 3}
   bossPortrait: {fileID: 21300000, guid: cffc5e9835ce52f4daf2ae7f152b9e75, type: 3}
-  jinglePlayer: {fileID: 82762427444251510}
+  jinglePlayer: {fileID: 82260253145427510}
   victoryJingle1: {fileID: 8300000, guid: 2543e1ee35e37524fb4b7fb438100b0b, type: 3}
   victoryJingle2: {fileID: 8300000, guid: f688334ccc75c5446b6e5b467669014b, type: 3}
 --- !u!114 &114763119532758264
@@ -811,7 +893,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: POKAZHITE VASHI DOKUMENTY
+  m_Text: Your Dance Papers, Please!
 --- !u!124 &124652333756971844
 Behaviour:
   m_ObjectHideFlags: 1
@@ -911,7 +993,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &224046621682301092
 RectTransform:
@@ -1043,10 +1125,10 @@ RectTransform:
   m_Father: {fileID: 224335972219455766}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 40}
-  m_SizeDelta: {x: 706, y: 40}
+  m_SizeDelta: {x: 0, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224675403924637066
 RectTransform:

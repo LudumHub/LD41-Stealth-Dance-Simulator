@@ -13,6 +13,7 @@ public class CameraMovment : MonoBehaviour {
     Vector3 smoothDampVelocity;
     float sizeVelocity;
     Vector3 destination;
+    public bool resetZoom;
 
     public void OnEnable()
     {
@@ -32,6 +33,11 @@ public class CameraMovment : MonoBehaviour {
     float secWaited = 3f;
     private void Update()
     {
+        if (resetZoom)
+        {
+            secWaited = 3f;
+            return;
+        }
         timer += Time.deltaTime;
         if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Jump"))
         {
@@ -55,7 +61,7 @@ public class CameraMovment : MonoBehaviour {
         var distanceVector = destination - target.position;
         var distance = distanceVector.magnitude;
         if (distance > maxDistance)
-            destination = target.position + 
+            destination = target.position +
                 distanceVector.normalized * maxDistance;
 
         destination.z = transform.position.z;

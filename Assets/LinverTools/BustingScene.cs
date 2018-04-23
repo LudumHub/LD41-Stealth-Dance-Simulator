@@ -21,6 +21,7 @@ public class BustingScene : MonoBehaviour
     public void StartBusting()
     {
         StartCommonBusting();
+        bustedMusicBox.Play();
         animator.SetTrigger("start");
     }
 
@@ -28,7 +29,7 @@ public class BustingScene : MonoBehaviour
     public void StartDialogue()
     {
         dialogueCanvas.Portrait = Portrait.Police;
-        dialogueCanvas.Text = "POKAZHITE VASHY DOKUMENTY";
+        dialogueCanvas.Text = "Your Dance Papers, Please!";
         dialogueCanvas.Appear();
         StartCoroutine(Dialogue());
     }
@@ -45,11 +46,13 @@ public class BustingScene : MonoBehaviour
     public void StartBustingPrank()
     {
         StartCommonBusting();
-        animator.SetTrigger("prank");
+        FindObjectOfType<CameraMovment>().enabled = true;
+        StartCoroutine(BustingPrank());
     }
 
     private void StartCommonBusting()
     {
+        FindObjectOfType<CameraMovment>().resetZoom = true;
         dj.VolumeMultiplier = 0.25f;
         foreach (var otherMovement in FindObjectsOfType<Movement>())
             otherMovement.enabled = false;
@@ -59,7 +62,15 @@ public class BustingScene : MonoBehaviour
             foreach (var dancerAnimator in animators)
                 dancerAnimator.enabled = false;
         }
-        bustedMusicBox.Play();
+    }
+
+    private IEnumerator BustingPrank()
+    {
+        dialogueCanvas.Portrait = Portrait.Boss;
+        dialogueCanvas.Text = "Oh my, I like you, boy!";
+        dialogueCanvas.Appear();
+        yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
+        animator.SetTrigger("prank");
     }
 
     [UsedImplicitly]

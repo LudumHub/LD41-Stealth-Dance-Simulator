@@ -73,20 +73,13 @@ public class DialogueCanvas : MonoBehaviour
 
     public IEnumerator StartVictorySequence()
     {
-        Portrait = Portrait.Boss;
-        Text = "Oh my, I like you, boy!";
-        Appear();
-        yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
         myAnimator.SetTrigger("time");
         jinglePlayer.clip = victoryJingle1;
         jinglePlayer.Play();
         yield return new WaitWhile(() => jinglePlayer.isPlaying);
-        yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
         myAnimator.SetTrigger("score");
         jinglePlayer.clip = victoryJingle2;
         jinglePlayer.Play();
         yield return new WaitWhile(() => jinglePlayer.isPlaying);
-        yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
-        Fade.instance.ResetLevel();
     }
 }
