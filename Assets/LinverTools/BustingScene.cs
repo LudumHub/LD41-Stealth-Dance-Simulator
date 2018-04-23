@@ -10,7 +10,6 @@ public class BustingScene : MonoBehaviour
     [SerializeField] private AudioSource failureMusicBox;
     private DialogueCanvas dialogueCanvas;
     private Animator animator;
-    private bool isClicked;
 
     private void Awake()
     {
@@ -44,15 +43,10 @@ public class BustingScene : MonoBehaviour
 
     private IEnumerator Dialogue()
     {
-        yield return new WaitUntil(() => isClicked);
+        yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
         dialogueCanvas.ShowFailure();
         failureMusicBox.Play();
         yield return new WaitForSeconds(2f);
         Fade.instance.ResetLevel();
-    }
-
-    public void HandleClick()
-    {
-        isClicked = true;
     }
 }

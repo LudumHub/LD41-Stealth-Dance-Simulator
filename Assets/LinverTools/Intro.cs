@@ -15,7 +15,7 @@ public class Intro : MonoBehaviour
     private IEnumerator Start()
     {
         SetPlayerAnimations(false);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         dialogueCanvas.Portrait = portrait;
         dialogueCanvas.Text = text;
         dialogueCanvas.Appear();
