@@ -18,11 +18,6 @@ public class DialogueCanvas : MonoBehaviour
         myAnimator = GetComponent<Animator>();
     }
 
-    public Color BackgroundColor
-    {
-        set { background.color = value; }
-    }
-
     public Portrait Portrait
     {
         set
@@ -31,12 +26,15 @@ public class DialogueCanvas : MonoBehaviour
             switch (value)
             {
                 case Portrait.Player:
+                    background.color = DanceStyle.greenColor;
                     sprite = playerPortrait;
                     break;
                 case Portrait.Police:
+                    background.color = DanceStyle.blueColor;
                     sprite = policePortrait;
                     break;
                 case Portrait.Boss:
+                    background.color = DanceStyle.bossColor;
                     sprite = bossPortrait;
                     break;
                 default:

@@ -9,8 +9,6 @@ public class BustingScene : MonoBehaviour
     [SerializeField] private DialogueCanvas dialogueCanvas;
     [SerializeField] private AudioSource bustedMusicBox;
     [SerializeField] private AudioSource failureMusicBox;
-    [SerializeField] private AudioClip bustedTrack;
-    [SerializeField] private AudioClip failureJingle;
     private Animator animator;
     private bool isClicked;
 
@@ -24,15 +22,19 @@ public class BustingScene : MonoBehaviour
         dj.VolumeMultiplier = 0.25f;
         foreach (var otherMovement in FindObjectsOfType<Movement>())
             otherMovement.enabled = false;
+        foreach (var dancer in FindObjectsOfType<Dancer>())
+        {
+            var animators = dancer.GetComponentsInChildren<Animator>();
+            foreach (var dancerAnimator in animators)
+                dancerAnimator.enabled = false;
+        }
         animator.SetTrigger("start");
-        bustedMusicBox.clip = bustedTrack;
         bustedMusicBox.Play();
     }
 
     [UsedImplicitly]
     public void StartDialogue()
     {
-        dialogueCanvas.BackgroundColor = DanceStyle.blueColor;
         dialogueCanvas.Portrait = Portrait.Police;
         dialogueCanvas.Text = "POKAZHITE VASHY DOKUMENTY";
         dialogueCanvas.Appear();
@@ -41,8 +43,7 @@ public class BustingScene : MonoBehaviour
 
     private IEnumerator Dialogue()
     {
-        while (!isClicked)
-            yield return new WaitForEndOfFrame();
+        yield return new WaitUntil(() => isClicked);
         dialogueCanvas.ShowFailure();
         failureMusicBox.Play();
         yield return new WaitForSeconds(2f);
