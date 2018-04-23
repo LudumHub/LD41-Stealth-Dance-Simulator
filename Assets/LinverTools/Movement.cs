@@ -5,7 +5,7 @@ public class Movement: MonoBehaviour
 {
     [SerializeField] private Vector3 smoothDampVelocity;
     public Vector3 Destination;
-    public float SmoothDampTime = 2f;
+    public static float SmoothDampTime = 1f;
     public float MaxSpeed = 1f;
     private Rigidbody2D myRigidbody;
 

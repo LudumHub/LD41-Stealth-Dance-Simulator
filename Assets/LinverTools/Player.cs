@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private float timeSinceLastSuspiciousnessUpdate;
     public DanceStyle DanceStyle;
     private Movement movement;
+    public static float SuspiciousnessPoint = 0.2f;
 
     private void Awake()
     {
@@ -37,7 +38,7 @@ public class Player : MonoBehaviour
     public void RaiseSuspiciousness()
     {
         StillBaka = true;
-        Suspiciousness += 0.1f * Time.deltaTime;
+        Suspiciousness += SuspiciousnessPoint * Time.deltaTime;
         timeSinceLastSuspiciousnessUpdate = 0f;
     }
 
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
         timeSinceLastSuspiciousnessUpdate += Time.deltaTime;
         if (timeSinceLastSuspiciousnessUpdate > suspiciousnessDropCooldown)
         {
-            Suspiciousness -= 0.1f * Time.deltaTime * 2;
+            Suspiciousness -= SuspiciousnessPoint * Time.deltaTime * 2;
         }
 
         var size = 0f;
@@ -105,6 +106,8 @@ public class Player : MonoBehaviour
         }
 
         if (CorrectColor != DanceStyle.PlayerColor)
+            RaiseSuspiciousness();
+        if (CorrectColor == DanceStyle.blueColor)
             RaiseSuspiciousness();
     }
 }

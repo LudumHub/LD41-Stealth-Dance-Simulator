@@ -1,13 +1,13 @@
 ﻿using System.Linq;
 using UnityEditor;
 
-[CustomEditor(typeof(Dancer))]
-public class DancerEditor : Editor
+[CustomEditor(typeof(FloorPainter))]
+public class FloorPainterEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-        var dancer = (Dancer)target;
+        var dancer = (FloorPainter)target;
         var styles = DanceStyle.AllStyles.ToList();
         var currentStyle = styles
             .Select(s => new { s.Name, Index = styles.IndexOf(s) })
