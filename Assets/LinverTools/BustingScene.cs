@@ -8,6 +8,7 @@ public class BustingScene : MonoBehaviour
     [SerializeField] private DJ dj;
     [SerializeField] private AudioSource bustedMusicBox;
     [SerializeField] private AudioSource failureMusicBox;
+    [SerializeField] private AudioSource victoryMusicBox;
     private DialogueCanvas dialogueCanvas;
     private Animator animator;
 
@@ -19,17 +20,8 @@ public class BustingScene : MonoBehaviour
 
     public void StartBusting()
     {
-        dj.VolumeMultiplier = 0.25f;
-        foreach (var otherMovement in FindObjectsOfType<Movement>())
-            otherMovement.enabled = false;
-        foreach (var dancer in FindObjectsOfType<Dancer>())
-        {
-            var animators = dancer.GetComponentsInChildren<Animator>();
-            foreach (var dancerAnimator in animators)
-                dancerAnimator.enabled = false;
-        }
+        StartCommonBusting();
         animator.SetTrigger("start");
-        bustedMusicBox.Play();
     }
 
     [UsedImplicitly]
@@ -48,5 +40,39 @@ public class BustingScene : MonoBehaviour
         failureMusicBox.Play();
         yield return new WaitForSeconds(2f);
         Fade.instance.ResetLevel();
+    }
+
+    public void StartBustingPrank()
+    {
+        StartCommonBusting();
+        animator.SetTrigger("prank");
+    }
+
+    private void StartCommonBusting()
+    {
+        dj.VolumeMultiplier = 0.25f;
+        foreach (var otherMovement in FindObjectsOfType<Movement>())
+            otherMovement.enabled = false;
+        foreach (var dancer in FindObjectsOfType<Dancer>())
+        {
+            var animators = dancer.GetComponentsInChildren<Animator>();
+            foreach (var dancerAnimator in animators)
+                dancerAnimator.enabled = false;
+        }
+        bustedMusicBox.Play();
+    }
+
+    [UsedImplicitly]
+    private void StartVictoryJingle()
+    {
+        dj.VolumeMultiplier = 0;
+        victoryMusicBox.Play();
+    }
+
+    [UsedImplicitly]
+    private IEnumerator StartVicotoryDialogue()
+    {
+        yield return new WaitForSeconds(0.5f);
+        yield return StartCoroutine(dialogueCanvas.StartVictorySequence());
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,9 @@ public class DialogueCanvas : MonoBehaviour
     [SerializeField] private Sprite playerPortrait;
     [SerializeField] private Sprite policePortrait;
     [SerializeField] private Sprite bossPortrait;
+    [SerializeField] private AudioSource jinglePlayer;
+    [SerializeField] private AudioClip victoryJingle1;
+    [SerializeField] private AudioClip victoryJingle2;
     private Animator myAnimator;
 
     private void Awake()
@@ -65,5 +69,24 @@ public class DialogueCanvas : MonoBehaviour
     {
         myAnimator.SetTrigger("disappear");
         myAnimator.ResetTrigger("appear");
+    }
+
+    public IEnumerator StartVictorySequence()
+    {
+        Portrait = Portrait.Boss;
+        Text = "Oh my, you've got some MOVES, boy!";
+        Appear();
+        yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
+        myAnimator.SetTrigger("time");
+        jinglePlayer.clip = victoryJingle1;
+        jinglePlayer.Play();
+        yield return new WaitWhile(() => jinglePlayer.isPlaying);
+        yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
+        myAnimator.SetTrigger("score");
+        jinglePlayer.clip = victoryJingle2;
+        jinglePlayer.Play();
+        yield return new WaitWhile(() => jinglePlayer.isPlaying);
+        yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
+        Fade.instance.ResetLevel();
     }
 }

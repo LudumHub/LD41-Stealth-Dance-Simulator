@@ -16,8 +16,8 @@ public class SweetVictoryTrigger : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other)
     {
         var player = other.GetComponent<Player>();
-        if (player != null)
-            Victory();
+        if (player == null) return;
+        player.IsVictorious = true;
     }
 
     private void Update()
@@ -32,10 +32,5 @@ public class SweetVictoryTrigger : MonoBehaviour {
     private float DistanceToPlayer()
     {
         return (Player.transform.position - transform.position).magnitude;
-    }
-
-    private void Victory()
-    {
-        throw new NotImplementedException("YOU~WON. Boss say: I like you!");
     }
 }

@@ -44,6 +44,8 @@ public class Player : MonoBehaviour
         get { return Suspiciousness > 0f; }
     }
 
+    public bool IsVictorious { get; set; }
+
     public void RaiseSuspiciousness()
     {
         if (HasAlibi) return;
@@ -123,10 +125,13 @@ public class Player : MonoBehaviour
             RaiseSuspiciousness();
     }
 
-    private void StartBusting()
+    public void StartBusting()
     {
         HasAlibi = true;
         movement.enabled = false;
-        bustingScene.StartBusting();
+        if (IsVictorious)
+            bustingScene.StartBustingPrank();
+        else
+            bustingScene.StartBusting();
     }
 }
