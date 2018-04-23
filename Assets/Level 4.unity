@@ -15361,7 +15361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portrait: 0
-  text: Man, this party stinks. I fucking hate these people.
+  text: One more floor before it becomes too hot.
 --- !u!4 &2049133569
 Transform:
   m_ObjectHideFlags: 0
