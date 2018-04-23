@@ -7,7 +7,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class WorldSnap : MonoBehaviour {
     Vector3 prevPosition = Vector3.zero;
-    static Color defaultColor = DanceStyle.greenColor;
+    public Color defaultColor = DanceStyle.greenColor;
 
     void Update () {
         if (!Application.isPlaying &&
@@ -24,6 +24,7 @@ public class WorldSnap : MonoBehaviour {
             UpdateCellCoords();
         awakeCoords = transform.position;
 
+        multColor = defaultColor;
         if (Application.isPlaying)
             transform.position = new Vector3(awakeCoords.x, awakeCoords.y - 5, awakeCoords.z);
     }
@@ -97,7 +98,7 @@ public class WorldSnap : MonoBehaviour {
     }
 
     [NonSerialized]
-    public Color multColor = defaultColor;
+    public Color multColor;
 
     private FloorPainter staticPainter;
     private readonly List<FloorPainter> movingPainters = new List<FloorPainter>();
