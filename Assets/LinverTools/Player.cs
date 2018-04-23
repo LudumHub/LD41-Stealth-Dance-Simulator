@@ -53,12 +53,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (HasAlibi)
-        {
-            if (Input.GetMouseButtonDown(0))
-                bustingScene.HandleClick();
-            return;
-        }
+        if (HasAlibi) return;
         timeSinceLastSuspiciousnessUpdate += Time.deltaTime;
         if (timeSinceLastSuspiciousnessUpdate > suspiciousnessDropCooldown)
         {
