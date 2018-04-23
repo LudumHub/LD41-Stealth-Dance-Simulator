@@ -8,11 +8,17 @@ public class Player : MonoBehaviour
     [SerializeField] private float suspiciousness;
     [SerializeField] private float suspiciousnessDropCooldown = 1f;
     [SerializeField] private AudioSource nani;
+    [SerializeField] private AudioSource bustedMusicBox;
+    [SerializeField] private AudioClip bustedTrack;
+    [SerializeField] private AudioClip failureJingle;
+    [SerializeField] private Animator bustingAnimator;
     [SerializeField] private AlertMark alertMark;
+    [SerializeField] private DJ dj;
     private float timeSinceLastSuspiciousnessUpdate;
     public DanceStyle DanceStyle;
     private Movement movement;
     public static float SuspiciousnessPoint = 0.2f;
+    private bool isBusted;
 
     private void Awake()
     {
@@ -25,7 +31,12 @@ public class Player : MonoBehaviour
     public float Suspiciousness
     {
         get { return suspiciousness; }
-        private set { suspiciousness = Mathf.Clamp(value, 0, 1f); }
+        private set
+        {
+            suspiciousness = Mathf.Clamp(value, 0, 1f);
+            if (Math.Abs(suspiciousness - 1f) < Mathf.Epsilon)
+                StartCoroutine(StartBusting());
+        }
     }
 
     public bool StillBaka { get; set; }
@@ -37,6 +48,7 @@ public class Player : MonoBehaviour
 
     public void RaiseSuspiciousness()
     {
+        if (isBusted) return;
         StillBaka = true;
         Suspiciousness += SuspiciousnessPoint * Time.deltaTime;
         timeSinceLastSuspiciousnessUpdate = 0f;
@@ -44,6 +56,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (isBusted) return;
         timeSinceLastSuspiciousnessUpdate += Time.deltaTime;
         if (timeSinceLastSuspiciousnessUpdate > suspiciousnessDropCooldown)
         {
@@ -87,6 +100,7 @@ public class Player : MonoBehaviour
     public Color CorrectColor;
     private void LateUpdate()
     {
+        if (isBusted) return;
         timer += Time.deltaTime;
         if (timer > 1 + selfSuspicionessDelay)
         {
@@ -109,5 +123,28 @@ public class Player : MonoBehaviour
             RaiseSuspiciousness();
         if (CorrectColor == DanceStyle.blueColor)
             RaiseSuspiciousness();
+    }
+
+    private IEnumerator StartBusting()
+    {
+        isBusted = true;
+        dj.VolumeMultiplier = 0.25f;
+        movement.enabled = false;
+        foreach (var otherMovement in FindObjectsOfType<Movement>())
+            otherMovement.enabled = false;
+        bustingAnimator.SetTrigger("start");
+        bustedMusicBox.clip = bustedTrack;
+        bustedMusicBox.Play();
+        yield return null;
+    }
+
+    public void StartFailureBustingDialogue()
+    {
+        StartCoroutine(FailureBustingDialogue());
+    }
+
+    private IEnumerator FailureBustingDialogue()
+    {
+        yield return null;
     }
 }

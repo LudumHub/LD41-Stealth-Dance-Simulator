@@ -10,6 +10,7 @@ public class DJ : MonoBehaviour
     [SerializeField] private AudioSource fastTrack;
     [SerializeField] private AudioSource idleTrack;
     private readonly List<WorldSnap> tiles = new List<WorldSnap>();
+    public float VolumeMultiplier = 1f;
 
     private void Update()
     {
@@ -28,7 +29,7 @@ public class DJ : MonoBehaviour
         var volumes = musicMap
             .ToDictionary(
                 kvp => kvp.Key,
-                kvp => GetValueOrDefault(colorCounts, kvp.Value, 0) / (float) totalCount);
+                kvp => GetValueOrDefault(colorCounts, kvp.Value, 0) / (float) totalCount * VolumeMultiplier);
         foreach (var kvp in volumes)
         {
             var track = kvp.Key;
