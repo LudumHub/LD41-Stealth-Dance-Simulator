@@ -10,6 +10,11 @@ public class DanceStyle
     public float MaxSpeed;
     public string PlayerAnimation;
     public Color PlayerColor;
+    public static Color greenColor = new Color(135 / 255.0f, 220 / 255.0f, 34/ 255.0f);
+    public static Color yellowColor = new Color(245 / 255.0f, 250 / 255.0f, 0 / 255.0f);
+    public static Color redColor = new Color(255 / 255.0f, 92 / 255.0f, 36 / 255.0f);
+    public static Color blueColor = new Color(13 / 255.0f, 144 / 255.0f, 255 / 255.0f);
+    public static Color bossColor = new Color(255 / 255.0f, 87 / 255.0f, 129 / 255.0f);
 
     public static DanceStyle Slow
     {
@@ -21,7 +26,7 @@ public class DanceStyle
                 SecFromLastTap = float.MaxValue,
                 PlayerAnimation = "slow",
                 MaxSpeed = 2f,
-                PlayerColor = Color.green
+                PlayerColor = DanceStyle.greenColor
             };
         }
     }
@@ -36,7 +41,7 @@ public class DanceStyle
                 SecFromLastTap = 1f,
                 PlayerAnimation = "average",
                 MaxSpeed = 2f,
-                PlayerColor = Color.yellow
+                PlayerColor = DanceStyle.yellowColor
             };
         }
     }
@@ -51,20 +56,19 @@ public class DanceStyle
                 SecFromLastTap = 0.4f,
                 PlayerAnimation = "fast",
                 MaxSpeed = 3f,
-                PlayerColor = Color.red
+                PlayerColor = DanceStyle.redColor
             };
         }
     }
 
-    public static DanceStyle Idle
+    public static DanceStyle Police
     {
         get
         {
             return new DanceStyle
             {
-                Name = "Idle",
-                PlayerAnimation = "slow",
-                PlayerColor = Color.blue
+                Name = "Police",
+                PlayerColor = DanceStyle.blueColor
             };
         }
     }
@@ -76,6 +80,7 @@ public class DanceStyle
             yield return Slow;
             yield return Average;
             yield return Fast;
+            yield return Police;
         }
     }
 }

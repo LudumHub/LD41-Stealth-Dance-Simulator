@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1170959401778114}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.96, y: 0.24000001, z: 0.09734006}
+  m_LocalPosition: {x: 2.6599998, y: 1.7599999, z: 0.09734006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4609009252080402}
@@ -247,7 +247,7 @@ MonoBehaviour:
     SecFromLastTap: 0
     MaxSpeed: 0
     PlayerAnimation: 
-    PlayerColor: {r: 0, g: 0, b: 1, a: 1}
+    PlayerColor: {r: 0.050980393, g: 0.5647059, b: 1, a: 1}
   AlertMark: {fileID: 114643220847304818}
   BodyCollider: {fileID: 0}
   AreaOfEffect: {fileID: 0}

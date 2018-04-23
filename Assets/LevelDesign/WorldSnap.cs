@@ -7,7 +7,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class WorldSnap : MonoBehaviour {
     Vector3 prevPosition = Vector3.zero;
-    static Color defaultColor = Color.green;
+    static Color defaultColor = DanceStyle.greenColor;
 
     void Update () {
         if (!Application.isPlaying &&
@@ -56,7 +56,7 @@ public class WorldSnap : MonoBehaviour {
         {
             spriteRenderer.color = grey * multColor;
             yield return new WaitForSeconds(1f);
-            spriteRenderer.color = Color.white * multColor * 2;
+            spriteRenderer.color = Color.white * multColor;
             yield return new WaitForSeconds(1f);
         }
     }

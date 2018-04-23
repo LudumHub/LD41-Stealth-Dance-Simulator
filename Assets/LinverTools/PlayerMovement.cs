@@ -44,9 +44,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (timer > Mathf.Max(player.DanceStyle.SecFromLastTap, 0.5f))
                 AssignStyle(DanceStyle.Slow);
-
-        if (Input.GetMouseButton(1))
-            AssignStyle(DanceStyle.Idle);
     }
 
     private void AssignStyle(DanceStyle style)

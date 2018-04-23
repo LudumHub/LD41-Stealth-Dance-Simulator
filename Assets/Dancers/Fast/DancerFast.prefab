@@ -104,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1150838804995656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2364388, y: -0.7807305, z: 0.09734006}
+  m_LocalPosition: {x: 12.8, y: -9.18, z: 0.09734006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4432326574495762}
@@ -172,7 +172,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.74
 --- !u!58 &58878647282054818
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -235,10 +235,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DanceStyle:
     Name: Fast
-    SecFromLastTap: 3.4028235e+38
-    MaxSpeed: 0
+    SecFromLastTap: 0.4
+    MaxSpeed: 3
     PlayerAnimation: fast
-    PlayerColor: {r: 1, g: 0, b: 0, a: 1}
+    PlayerColor: {r: 1, g: 0.36078432, b: 0.14117648, a: 1}
   AlertMark: {fileID: 114867632004992530}
   BodyCollider: {fileID: 58878647282054818}
   AreaOfEffect: {fileID: 58156805920399818}

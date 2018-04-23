@@ -15,10 +15,10 @@ public class DJ : MonoBehaviour
     {
         var musicMap = new Dictionary<AudioSource, Color>
         {
-            {slowTrack, Color.green},
-            {averageTrack, Color.yellow},
-            {fastTrack, Color.red},
-            {idleTrack, Color.blue},
+            {slowTrack, DanceStyle.greenColor},
+            {averageTrack, DanceStyle.yellowColor},
+            {fastTrack, DanceStyle.redColor},
+            {idleTrack, DanceStyle.blueColor},
         };
         var colorCounts = tiles
             .GroupBy(t => t.multColor)

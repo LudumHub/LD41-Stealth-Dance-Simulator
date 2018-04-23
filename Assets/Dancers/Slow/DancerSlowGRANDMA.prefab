@@ -263,9 +263,9 @@ MonoBehaviour:
   DanceStyle:
     Name: Slow
     SecFromLastTap: 3.4028235e+38
-    MaxSpeed: 0
+    MaxSpeed: 2
     PlayerAnimation: slow
-    PlayerColor: {r: 0, g: 1, b: 0, a: 1}
+    PlayerColor: {r: 0.5294118, g: 0.8627451, b: 0.13333334, a: 1}
   AlertMark: {fileID: 114921038612192632}
   BodyCollider: {fileID: 0}
   AreaOfEffect: {fileID: 0}
