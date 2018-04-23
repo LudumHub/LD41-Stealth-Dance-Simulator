@@ -5,6 +5,7 @@ public class Intro : MonoBehaviour
 {
     [SerializeField] private Portrait portrait;
     [SerializeField] private string text;
+    [SerializeField] private bool disablePatrols;
     private DialogueCanvas dialogueCanvas;
 
     private void Awake()
@@ -33,5 +34,9 @@ public class Intro : MonoBehaviour
         foreach (var animator in animators)
             animator.enabled = active;
         player.GetComponent<PlayerMovement>().enabled = active;
+        FindObjectOfType<ConstantMove>().enabled = active;
+        if (disablePatrols)
+            foreach (var patrol in FindObjectsOfType<Patrol>())
+                patrol.enabled = active;
     }
 }

@@ -69,7 +69,7 @@ public class BustingScene : MonoBehaviour
         dialogueCanvas.Portrait = Portrait.Boss;
         dialogueCanvas.Text = "Oh my, I like you, boy!";
         dialogueCanvas.Appear();
-        yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
+        yield return new WaitForSeconds(1f);
         animator.SetTrigger("prank");
     }
 
