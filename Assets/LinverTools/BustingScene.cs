@@ -46,6 +46,7 @@ public class BustingScene : MonoBehaviour
     public void StartBustingPrank()
     {
         StartCommonBusting();
+        dialogueCanvas.StopTimeRecording();
         FindObjectOfType<CameraMovment>().enabled = true;
         StartCoroutine(BustingPrank());
     }

@@ -9,6 +9,8 @@ public class DialogueCanvas : MonoBehaviour
     [SerializeField] private Image background;
     [SerializeField] private Image portrait;
     [SerializeField] private Text text;
+    [SerializeField] private Text victoryText;
+    [SerializeField] private Text victoryTextDouble;
     [SerializeField] private Sprite playerPortrait;
     [SerializeField] private Sprite policePortrait;
     [SerializeField] private Sprite bossPortrait;
@@ -69,6 +71,17 @@ public class DialogueCanvas : MonoBehaviour
     {
         myAnimator.SetTrigger("disappear");
         myAnimator.ResetTrigger("appear");
+    }
+
+    public void StopTimeRecording()
+    {
+        var timer = FindObjectOfType<TimeCounter>();
+        if (timer != null)
+        {
+            var textText = "And it took " + Mathf.RoundToInt(timer.timePlayed) + " seconds!";
+            victoryText.text = textText;
+            victoryTextDouble.text = textText;
+        }
     }
 
     public IEnumerator StartVictorySequence()
