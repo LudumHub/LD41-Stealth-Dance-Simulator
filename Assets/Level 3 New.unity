@@ -236,30 +236,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d4a6a49d37ea38489f0d56fccf32287, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &3438078 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1682866827525718, guid: 5d4a6a49d37ea38489f0d56fccf32287,
-    type: 2}
-  m_PrefabInternal: {fileID: 3438077}
---- !u!114 &3438079 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114228064258999246, guid: 5d4a6a49d37ea38489f0d56fccf32287,
-    type: 2}
-  m_PrefabInternal: {fileID: 3438077}
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!114 &3438080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 3438078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8272338a359a64148a3ccdb58ae7561e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seconds: 2
-  image: {fileID: 3438079}
 --- !u!1001 &3717952
 Prefab:
   m_ObjectHideFlags: 0
@@ -2909,7 +2885,7 @@ TextMesh:
   m_Text: "This lady is a perfect cover, \nif you ask me."
   m_OffsetZ: 0
   m_CharacterSize: 1
-  m_LineSpacing: 0.8
+  m_LineSpacing: 1.07
   m_Anchor: 0
   m_Alignment: 1
   m_TabSize: 4
@@ -2960,14 +2936,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 232769264}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.03, y: -0.81, z: 18.189453}
+  m_LocalRotation: {x: 0, y: 0, z: 0.23548135, w: 0.97187895}
+  m_LocalPosition: {x: 5.31, y: -1.01, z: 18.189453}
   m_LocalScale: {x: 0.090604596, y: 0.09472298, z: 0.41183904}
   m_Children:
   - {fileID: 1192938104}
   m_Father: {fileID: 0}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 27.24}
 --- !u!1001 &235414878
 Prefab:
   m_ObjectHideFlags: 0
@@ -13981,7 +13957,7 @@ TextMesh:
   m_Text: "This lady is a perfect cover, \nif you ask me."
   m_OffsetZ: 0
   m_CharacterSize: 1
-  m_LineSpacing: 0.8
+  m_LineSpacing: 1.07
   m_Anchor: 0
   m_Alignment: 1
   m_TabSize: 4
@@ -15820,6 +15796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portrait: 0
   text: Usually I work alone, but I have to use a crowd.
+  disablePatrols: 0
 --- !u!4 &1406453619
 Transform:
   m_ObjectHideFlags: 0
