@@ -5,6 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class BustingScene : MonoBehaviour
 {
+    private static readonly string[] DialogueTexts = {
+        "Your moves are outdated.",
+        "This style has expired last month.",
+        "Your moves are too cool for this disco.",
+        "Are you alone? May I buy you a drink?",
+        "Awesome moves, pal! Let me buy you a drink.",
+        "May I see your license for those awesome moves?"
+    };
+    private static readonly System.Random Random = new System.Random();
+
     [SerializeField] private DJ dj;
     [SerializeField] private AudioSource bustedMusicBox;
     [SerializeField] private AudioSource failureMusicBox;
@@ -29,7 +39,7 @@ public class BustingScene : MonoBehaviour
     public void StartDialogue()
     {
         dialogueCanvas.Portrait = Portrait.Police;
-        dialogueCanvas.Text = "Your Dance Papers, Please!";
+        dialogueCanvas.Text = DialogueTexts[Random.Next(6)];
         dialogueCanvas.Appear();
         StartCoroutine(Dialogue());
     }

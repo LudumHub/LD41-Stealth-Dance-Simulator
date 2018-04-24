@@ -24382,7 +24382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portrait: 0
-  text: Dance police... are so arrogant to catch me.
+  text: Dance police... is so arrogant to catch me.
   disablePatrols: 0
 --- !u!4 &2114721554
 Transform:

@@ -12983,6 +12983,10 @@ Prefab:
       propertyPath: victoryTextDouble
       value: 
       objectReference: {fileID: 895288276}
+    - target: {fileID: 1438756232713562, guid: 1e081e49ede133945b6a45f327ca9655, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e081e49ede133945b6a45f327ca9655, type: 2}
   m_IsPrefabParent: 0
@@ -28574,6 +28578,16 @@ Prefab:
     - target: {fileID: 4838244369377084, guid: 7219441c218f93b49b53a93991dadc55, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 61008006928366948, guid: 7219441c218f93b49b53a93991dadc55,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.2652626
+      objectReference: {fileID: 0}
+    - target: {fileID: 61008006928366948, guid: 7219441c218f93b49b53a93991dadc55,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 2.439475
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7219441c218f93b49b53a93991dadc55, type: 2}
