@@ -6325,7 +6325,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 507898507}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -53.72356, y: -27.985731, z: 0.09734006}
+  m_LocalPosition: {x: 3.9064388, y: 0.8292695, z: 0.09734006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1321146464}
@@ -6397,7 +6397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: -1, y: -0.5, z: 0}
   Speed: 1
-  t: 52.63
+  t: -5
   startingT: -5
   shouldReset: 0
 --- !u!1 &507927367
@@ -12978,9 +12978,20 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114744098604955864, guid: 1e081e49ede133945b6a45f327ca9655,
+        type: 2}
+      propertyPath: victoryTextDouble
+      value: 
+      objectReference: {fileID: 895288276}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e081e49ede133945b6a45f327ca9655, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &895288276 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114763119532758264, guid: 1e081e49ede133945b6a45f327ca9655,
+    type: 2}
+  m_PrefabInternal: {fileID: 895288275}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &895649446
 Prefab:
   m_ObjectHideFlags: 0

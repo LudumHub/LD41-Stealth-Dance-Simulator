@@ -36,6 +36,7 @@ public class BustingScene : MonoBehaviour
 
     private IEnumerator Dialogue()
     {
+        yield return new WaitForSeconds(0.5f);
         yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
         dialogueCanvas.ShowFailure();
         failureMusicBox.Play();
