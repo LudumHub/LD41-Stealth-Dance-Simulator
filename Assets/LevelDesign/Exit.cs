@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Exit : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D other)
@@ -9,6 +7,7 @@ public class Exit : MonoBehaviour {
         if (player == null)
             return;
         player.HasAlibi = true;
+        Ytics.LevelComplete();
         Fade.instance.LoadNextLevel();
     }
 }

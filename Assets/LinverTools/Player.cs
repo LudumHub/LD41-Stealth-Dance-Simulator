@@ -130,8 +130,14 @@ public class Player : MonoBehaviour
         HasAlibi = true;
         movement.enabled = false;
         if (IsVictorious)
+        {
+            Ytics.LevelComplete();
             bustingScene.StartBustingPrank();
+        }
         else
+        {
+            Ytics.LevelFail(DanceStyle.PlayerColor, CorrectColor, transform.position);
             bustingScene.StartBusting();
+        }
     }
 }

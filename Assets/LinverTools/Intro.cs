@@ -17,6 +17,7 @@ public class Intro : MonoBehaviour
     {
         SetPlayerAnimations(false);
         yield return new WaitForSeconds(1f);
+        Ytics.IntroStart();
         dialogueCanvas.Portrait = portrait;
         dialogueCanvas.Text = text;
         dialogueCanvas.Appear();
@@ -24,6 +25,7 @@ public class Intro : MonoBehaviour
         yield return new WaitUntil(() => Input.GetMouseButtonUp(0));
         dialogueCanvas.Disappear();
         SetPlayerAnimations(true);
+        Ytics.LevelStart();
     }
 
     private void SetPlayerAnimations(bool active)
